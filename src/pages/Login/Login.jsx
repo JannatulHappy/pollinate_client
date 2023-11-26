@@ -3,10 +3,11 @@ import { FcGoogle } from "react-icons/fc";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 
-// import { getToken, saveUser } from " ../../api/auth";
+
 import toast from "react-hot-toast";
 import { TbFidgetSpinner } from "react-icons/tb";
-import { getToken } from "../../api/auth";
+import { getToken, saveUser } from "../../api/auth";
+
 
 const Login = () => {
   const navigate = useNavigate();
@@ -37,8 +38,8 @@ const Login = () => {
     try {
       const result = await signInWithGoogle();
 
-    //   const dbResponse = await saveUser(result?.user);
-    //   console.log(dbResponse);
+      const dbResponse = await saveUser(result?.user);
+      console.log(dbResponse);
 
       await getToken(result?.user?.email);
       toast.success("Sign up successful");

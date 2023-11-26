@@ -3,8 +3,8 @@ import { FcGoogle } from "react-icons/fc";
 import { imageUpload } from "../../api/utils";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
-// import { getToken, saveUser } from "../../api/auth";
-import { getToken} from "../../api/auth";
+import { getToken, saveUser } from "../../api/auth";
+
 import { toast } from "react-hot-toast";
 import { TbFidgetSpinner } from "react-icons/tb";
 
@@ -28,7 +28,7 @@ const SignUp = () => {
       const result = await createUser(email, password);
       await updateUserProfile(name, imageData?.data?.display_url);
 
-    //   const dbResponse = await saveUser(result?.user);
+      const dbResponse = await saveUser(result?.user);
 
       await getToken(result?.user?.email);
       toast.success("Sign up successful");
