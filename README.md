@@ -1,15 +1,15 @@
 # Polling and Survey App with Payment Integration
 
-This project involves the development of an advanced Polling and Survey application using the MERN (MongoDB, Express.js, React.js, Node.js) stack. The goal is to integrate payment functionalities, implement a robust user management system, and create an admin dashboard with role management.
+This project involves the development of an advanced Polling and Survey application using the MERN (MongoDB, Express.js, React.js, Node.js) stack. The goal is to integrate payment functionalities, implemented a robust user management system, and created an admin dashboard with role management.
 
 ## Live Site Link
 
-[https://pollinate-01.web.app](#)
+[https://pollinate-01.web.app/]()
 
 ## GitHub Repositories
 
-- [https://github.com/programming-hero-web-course1/b8a12-client-side-JannatulHappy](#)
-- [https://github.com/programming-hero-web-course1/b8a12-server-side-JannatulHappy](#)
+- [https://github.com/programming-hero-web-course1/b8a12-client-side-JannatulHappy]()
+- [https://github.com/programming-hero-web-course1/b8a12-server-side-JannatulHappy]()
 
 
 
