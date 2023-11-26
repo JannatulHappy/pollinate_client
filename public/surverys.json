@@ -6,8 +6,10 @@
     "like": 25,
     "dislike": 4,
     "report": 2,
+
     "timestamp": "2023-11-30T12:45:00Z",
-    "surveyStatus": "pending",
+    "surveyStatus": "unpublished",
+    "adminFeedback": "the status is unpublished. Just did it Emni",
     "totalVote": 15,
     "surveyCreatedBy": "user1.displayName",
     "surveyCreatorEmail": "user1.email",
@@ -36,17 +38,17 @@
     "responses": [
       {
         "responseUserEmail": "userEmail1",
-        "answers": ["Yes", "Android", "Yes"],
+        "answers": ["Yes", "yes", "Yes"],
         "title": "Tech Survey 1"
       },
       {
         "responseUserEmail": "userEmail2",
-        "answers": ["Yes", "iOS", "Yes"],
+        "answers": ["Yes", "yes", "Yes"],
         "title": "Tech Survey 2"
       },
       {
         "responseUserEmail": "userEmail3",
-        "answers": ["No", "iOS", "No"],
+        "answers": ["Yes", "yes", "Yes"],
         "title": "Tech Survey 3"
       }
     ]
@@ -111,7 +113,7 @@
     "dislike": 8,
     "report": 0,
     "timestamp": "2023-12-01T09:15:00Z",
-    "surveyStatus": "pending",
+    "surveyStatus": "published",
     "totalVote": 20,
     "surveyCreatedBy": "user3.displayName",
     "surveyCreatorEmail": "user3.email",
@@ -140,17 +142,17 @@
     "responses": [
       {
         "responseUserEmail": "userEmail7",
-        "answers": ["Beach", "Yes", "Yes"],
+        "answers": ["Yes", "yes", "Yes"],
         "title": "Travel Survey 1"
       },
       {
         "responseUserEmail": "userEmail8",
-        "answers": ["Mountain", "No", "Yes"],
+        "answers": ["Yes", "No", "Yes"],
         "title": "Travel Survey 2"
       },
       {
         "responseUserEmail": "userEmail9",
-        "answers": ["Beach", "Yes", "No"],
+        "answers": ["No", "Yes", "No"],
         "title": "Travel Survey 3"
       }
     ]
@@ -163,7 +165,8 @@
     "dislike": 3,
     "report": 3,
     "timestamp": "2023-12-01T15:45:00Z",
-    "surveyStatus": "pending",
+    "surveyStatus": "unpublished",
+    "adminFeedback":"the status is unpublished",
     "totalVote": 12,
     "surveyCreatedBy": "user4.displayName",
     "surveyCreatorEmail": "user4.email",
@@ -206,7 +209,8 @@
         "title": "Fitness Survey 3"
       }
     ]
-  },{
+  },
+  {
     "category": "Technology",
     "title": "Smart Home Devices Survey",
     "description": "Share your experiences and preferences for smart home devices.",
@@ -214,7 +218,7 @@
     "dislike": 2,
     "report": 1,
     "timestamp": "2023-12-01T14:00:00Z",
-    "surveyStatus": "pending",
+    "surveyStatus": "published",
     "totalVote": 12,
     "surveyCreatedBy": "user5.displayName",
     "surveyCreatorEmail": "user5.email",
@@ -226,15 +230,36 @@
     ],
     "Feedback": [
       [
-        { "proUserEmail": "pro_user_email1", "comment": "Interesting survey! Love discussing smart home tech." },
-        { "proUserEmail": "pro_user_email2", "comment": "Great questions! Made me think about upgrading my home." },
-        { "proUserEmail": "pro_user_email3", "comment": "I wish there were more questions about security systems." }
+        {
+          "proUserEmail": "pro_user_email1",
+          "comment": "Interesting survey! Love discussing smart home tech."
+        },
+        {
+          "proUserEmail": "pro_user_email2",
+          "comment": "Great questions! Made me think about upgrading my home."
+        },
+        {
+          "proUserEmail": "pro_user_email3",
+          "comment": "I wish there were more questions about security systems."
+        }
       ]
     ],
     "responses": [
-      { "responseUserEmail": "userEmail4", "answers": ["Yes", "Yes", "Yes"], "title": "Smart Home Survey 1" },
-      { "responseUserEmail": "userEmail5", "answers": ["Yes", "Yes", "No"], "title": "Smart Home Survey 2" },
-      { "responseUserEmail": "userEmail6", "answers": ["Yes", "No", "Yes"], "title": "Smart Home Survey 3" }
+      {
+        "responseUserEmail": "userEmail4",
+        "answers": ["Yes", "Yes", "Yes"],
+        "title": "Smart Home Survey 1"
+      },
+      {
+        "responseUserEmail": "userEmail5",
+        "answers": ["Yes", "Yes", "No"],
+        "title": "Smart Home Survey 2"
+      },
+      {
+        "responseUserEmail": "userEmail6",
+        "answers": ["Yes", "No", "Yes"],
+        "title": "Smart Home Survey 3"
+      }
     ]
   },
   {
@@ -245,7 +270,7 @@
     "dislike": 5,
     "report": 0,
     "timestamp": "2023-12-02T09:30:00Z",
-    "surveyStatus": "pending",
+    "surveyStatus": "published",
     "totalVote": 18,
     "surveyCreatedBy": "user6.displayName",
     "surveyCreatorEmail": "user6.email",
@@ -257,15 +282,36 @@
     ],
     "Feedback": [
       [
-        { "proUserEmail": "pro_user_email4", "comment": "Exciting survey! Can't wait to discuss gaming preferences." },
-        { "proUserEmail": "pro_user_email5", "comment": "Great questions! Made me reflect on my gaming setup." },
-        { "proUserEmail": "pro_user_email6", "comment": "I wish there were more questions about game development." }
+        {
+          "proUserEmail": "pro_user_email4",
+          "comment": "Exciting survey! Can't wait to discuss gaming preferences."
+        },
+        {
+          "proUserEmail": "pro_user_email5",
+          "comment": "Great questions! Made me reflect on my gaming setup."
+        },
+        {
+          "proUserEmail": "pro_user_email6",
+          "comment": "I wish there were more questions about game development."
+        }
       ]
     ],
     "responses": [
-      { "responseUserEmail": "userEmail7", "answers": ["PC", "Yes", "Yes"], "title": "Gaming Survey 1" },
-      { "responseUserEmail": "userEmail8", "answers": ["Console", "No", "Yes"], "title": "Gaming Survey 2" },
-      { "responseUserEmail": "userEmail9", "answers": ["Mobile", "Yes", "No"], "title": "Gaming Survey 3" }
+      {
+        "responseUserEmail": "userEmail7",
+        "answers": ["Yes", "yes", "Yes"],
+        "title": "Gaming Survey 1"
+      },
+      {
+        "responseUserEmail": "userEmail8",
+        "answers": ["Console", "No", "Yes"],
+        "title": "Gaming Survey 2"
+      },
+      {
+        "responseUserEmail": "userEmail9",
+        "answers": ["Yes", "No", "Yes"],
+        "title": "Gaming Survey 3"
+      }
     ]
   }
 ]
