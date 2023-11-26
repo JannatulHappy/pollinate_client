@@ -4,12 +4,12 @@ This project involves the development of an advanced Polling and Survey applicat
 
 ## Live Site Link
 
-[https://pollinate-01.web.app/]()
+[Live Site Link](https://pollinate-01.web.app)
 
 ## GitHub Repositories
 
-- [https://github.com/programming-hero-web-course1/b8a12-client-side-JannatulHappy]()
-- [https://github.com/programming-hero-web-course1/b8a12-server-side-JannatulHappy]()
+- [Client Side Code](https://github.com/programming-hero-web-course1/b8a12-client-side-JannatulHappy)
+- [Server Side Code](https://github.com/programming-hero-web-course1/b8a12-server-side-JannatulHappy)
 
 
 
