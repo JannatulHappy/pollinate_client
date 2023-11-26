@@ -86,6 +86,7 @@ This project involves the development of an advanced Polling and Survey applicat
 ## if you want to run it in you machine
 
 MONGO_URI=mongodb://localhost:27017/polling-and-survey-app
+
 STRIPE_SECRET_KEY=YOUR_STRIPE_SECRET_KEY
 
 5. Start the backend server by running `npm run dev:backend`.
