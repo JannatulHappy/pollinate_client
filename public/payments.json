@@ -1,0 +1,14 @@
+[
+  {
+    "userEmail": "proUser-email",
+    "amount": 9.99,
+    "timestamp": "2023-11-26T12:30:00Z"
+  },
+  {
+
+    "userEmail": "proUser-email",
+    
+    "amount": 14.99,
+    "timestamp": "2023-11-27T11:00:00Z"
+  }
+]

@@ -1,0 +1,7 @@
+{
+  "surveyId": 1,
+  "userEmail": "userEmail",
+ "answers": ["Yes", "Yes", "Android"],
+  "title": "survey title",
+  "timestamp": "2023-11-26T12:30:00Z"
+}

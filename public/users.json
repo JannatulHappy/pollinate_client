@@ -1,0 +1,28 @@
+[
+  {
+    "name": "Admin User",
+    "email": "admin@example.com",
+    "status":"verified",
+    "role": "admin"
+  },
+ 
+  {
+    "name": "Surveyor User",
+    "email": "surveyor@example.com",
+    "status": "verified",
+    "userPhoto":"user.photoURL",
+    "role": "surveyor"
+  },
+  {
+    "name": "Pro User",
+    "email": "pro@example.com",
+    "status": "verified",
+    "role": "pro-user"
+  },
+  {
+    "name": "Regular User",
+    "email": "user@example.com",
+    "status": "verified",
+    "role": "user"
+  }
+]
