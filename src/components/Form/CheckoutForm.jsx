@@ -6,7 +6,9 @@ import { ImSpinner9 } from "react-icons/im";
 
 import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
-import { createPaymentIntent, savePaymentInfo } from "../../api/surveys";
+import { createPaymentIntent, savePaymentInfo } from "../../api/payments";
+import { updateUserStatus } from "../../api/auth";
+
 
 const CheckoutForm = ({ paymentInfo, closeModal }) => {
   const stripe = useStripe();
@@ -85,7 +87,8 @@ const CheckoutForm = ({ paymentInfo, closeModal }) => {
         // save payment information to the server
         await savePaymentInfo(proPaymentInfo);
         // update room status in db
-        // await udpateStatus(paymentInfo.roomId, true);
+        
+        await updateUserStatus(paymentInfo.proUserEmail, "pro-user");
         const text = `Booking successful ${paymentIntent.id}`;
         toast.success(text);
         navigate("/");

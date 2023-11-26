@@ -10,7 +10,11 @@ export const saveUser = async (user) => {
   const { data } = await axiosSecure.put(`/users/${user?.email}`, currentUser);
   return data;
 };
-
+// update  pro user status after payment
+export const updateUserStatus = async (email, status) => {
+    const { data } = await axiosSecure.put(`/user/status/${email}`, { status });
+    return data;
+}
 export const getToken = async (email) => {
   const { data } = await axiosSecure.post("/jwt", email);
   console.log("token received from server ...");

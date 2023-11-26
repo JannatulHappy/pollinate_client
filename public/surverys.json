@@ -1,106 +1,53 @@
 [
   {
     "category": "Technology",
-    "title": "Smartphone Usage Survey",
-    "description": "Share your thoughts on smartphone usage habits.",
-    "like": 10,
-    "dislike": 5,
-    "report": 0,
-    "timestamp": "2023-11-26T12:00:00Z",
-    "surveyStatus": "pending",
-    "totalVote": 70,
-    "surveyCreatedBy": "user.displayName",
-    "surveyCreatorEmail": "user.email",
-    "surveyCreatorImage": "user.photoURL",
-    "questions": [
-      {
-        "question": "Do you own a smartphone?",
-        "options": ["Yes", "No"]
-      },
-      {
-        "question": "Do you use social media apps daily?",
-        "options": ["Yes", "No"]
-      }
-    ]
-  },
-  {
-    "category": "Health and Fitness",
-    "title": "Daily Exercise Habits",
-    "description": "Tell us about your daily exercise routines.",
-    "like": 15,
-    "dislike": 3,
-    "report": 2,
-    "timestamp": "2023-11-27T08:30:00Z",
-    "surveyStatus": "published",
-    "totalVote": 29,
-    "surveyCreatedBy": "user2.displayName",
-    "surveyCreatorEmail": "user2.email",
-    "surveyCreatorImage": "user2.photoURL",
-    "questions": [
-      {
-        "question": "Do you exercise regularly?",
-        "options": ["Yes", "No"]
-      },
-
-      {
-        "question": "Do you practice mindfulness exercises?",
-        "options": ["Yes", "No"]
-      }
-    ]
-  },
-  {
-    "category": "Movies",
-    "title": "Movie Preferences",
-    "description": "Vote for your favorite movie genres and preferences.",
-    "like": 20,
-    "dislike": 8,
-    "report": 1,
-    "timestamp": "2023-11-28T14:45:00Z",
-    "surveyStatus": "published",
-    "totalVote": 20,
-    "surveyCreatedBy": "user3.displayName",
-    "surveyCreatorEmail": "user3.email",
-    "surveyCreatorImage": "user3.photoURL",
-    "questions": [
-      {
-        "question": "Do you enjoy watching action movies?",
-        "options": ["Yes", "No"]
-      },
-      {
-        "question": "Do you prefer watching movies in theaters or at home?",
-        "options": ["Theater", "Home"]
-      },
-      {
-        "question": "Do you like classic movies?",
-        "options": ["Yes", "No"]
-      }
-    ]
-  },
-  {
-    "category": "Environment",
-    "title": "Environmental Awareness",
-    "description": "Share your opinions on environmental issues.",
-    "like": 12,
+    "title": "Favorite Tech Gadgets Survey",
+    "description": "Share your preferences for the latest tech gadgets.",
+    "like": 25,
     "dislike": 4,
-    "report": 0,
-    "timestamp": "2023-11-29T09:15:00Z",
-    "surveyStatus": "published",
-    "totalVote": 4,
-    "surveyCreatedBy": "user4.displayName",
-    "surveyCreatorEmail": "user4.email",
-    "surveyCreatorImage": "user4.photoURL",
+    "report": 2,
+    "timestamp": "2023-11-30T12:45:00Z",
+    "surveyStatus": "pending",
+    "totalVote": 15,
+    "surveyCreatedBy": "user1.displayName",
+    "surveyCreatorEmail": "user1.email",
+    "surveyCreatorImage": "user1.photoURL",
     "questions": [
+      { "question1": "Do you own a smartwatch?" },
+      { "question2": "Do you prefer iOS or Android?" },
+      { "question3": "Have you tried virtual reality (VR) gaming?" }
+    ],
+    "Feedback": [
+      [
+        {
+          "proUserEmail": "pro_user1@email.com",
+          "comment": "Exciting survey! Can't wait to see the results."
+        },
+        {
+          "proUserEmail": "pro_user2@email.com",
+          "comment": "Great questions! Very insightful."
+        },
+        {
+          "proUserEmail": "pro_user3@email.com",
+          "comment": "I wish there were more questions about AI."
+        }
+      ]
+    ],
+    "responses": [
       {
-        "question": "Are you conscious of your carbon footprint?",
-        "options": ["Yes", "No"]
+        "responseUserEmail": "userEmail1",
+        "answers": ["Yes", "Android", "Yes"],
+        "title": "Tech Survey 1"
       },
       {
-        "question": "Do you actively participate in recycling?",
-        "options": ["Yes", "No"]
+        "responseUserEmail": "userEmail2",
+        "answers": ["Yes", "iOS", "Yes"],
+        "title": "Tech Survey 2"
       },
       {
-        "question": "Do you support renewable energy initiatives?",
-        "options": ["Yes", "No"]
+        "responseUserEmail": "userEmail3",
+        "answers": ["No", "iOS", "No"],
+        "title": "Tech Survey 3"
       }
     ]
   },
@@ -114,68 +61,211 @@
     "timestamp": "2023-11-30T11:30:00Z",
     "surveyStatus": "pending",
     "totalVote": 10,
-    "surveyCreatedBy": "user5.displayName",
-    "surveyCreatorEmail": "user5.email",
-    "surveyCreatorImage": "user5.photoURL",
+    "surveyCreatedBy": "user2.displayName",
+    "surveyCreatorEmail": "user2.email",
+    "surveyCreatorImage": "user2.photoURL",
     "questions": [
+      { "question1": "Do you enjoy cooking at home?" },
+      { "question2": "Do you enjoy having food in a restaurant?" },
+      { "question3": "Do you follow any specific diet plan?" }
+    ],
+    "Feedback": [
+      [
+        {
+          "proUserEmail": "pro_user_email1",
+          "comment": "Great survey! Loved participating."
+        },
+        {
+          "proUserEmail": "pro_user_email2",
+          "comment": "Interesting questions. Can't wait to see the results!"
+        },
+        {
+          "proUserEmail": "pro_user_email3",
+          "comment": "I wish there were more genre options."
+        }
+      ]
+    ],
+    "responses": [
       {
-        "question": "Do you enjoy cooking at home?",
-        "options": ["Yes", "No"]
+        "responseUserEmail": "userEmail4",
+        "answers": ["Yes", "Yes", "No"],
+        "title": "Cuisine Survey 1"
       },
-
       {
-        "question": "Do you follow any specific diet plan?",
-        "options": ["Yes", "No"]
+        "responseUserEmail": "userEmail5",
+        "answers": ["Yes", "Yes", "Yes"],
+        "title": "Cuisine Survey 2"
+      },
+      {
+        "responseUserEmail": "userEmail6",
+        "answers": ["Yes", "Yes", "No"],
+        "title": "Cuisine Survey 3"
       }
     ]
   },
   {
+    "category": "Travel",
+    "title": "Dream Travel Destinations",
+    "description": "Share your dream travel destinations and experiences.",
+    "like": 30,
+    "dislike": 8,
+    "report": 0,
+    "timestamp": "2023-12-01T09:15:00Z",
+    "surveyStatus": "pending",
+    "totalVote": 20,
+    "surveyCreatedBy": "user3.displayName",
+    "surveyCreatorEmail": "user3.email",
+    "surveyCreatorImage": "user3.photoURL",
+    "questions": [
+      { "question1": "Do you prefer beach or mountain vacations?" },
+      { "question2": "Have you ever traveled solo?" },
+      { "question3": "Do you collect souvenirs from your travels?" }
+    ],
+    "Feedback": [
+      [
+        {
+          "proUserEmail": "pro_user_email4",
+          "comment": "Exciting survey! Can't wait to plan my next trip."
+        },
+        {
+          "proUserEmail": "pro_user_email5",
+          "comment": "Great questions! Reminded me of my travel experiences."
+        },
+        {
+          "proUserEmail": "pro_user_email6",
+          "comment": "I wish there were more questions about cultural experiences."
+        }
+      ]
+    ],
+    "responses": [
+      {
+        "responseUserEmail": "userEmail7",
+        "answers": ["Beach", "Yes", "Yes"],
+        "title": "Travel Survey 1"
+      },
+      {
+        "responseUserEmail": "userEmail8",
+        "answers": ["Mountain", "No", "Yes"],
+        "title": "Travel Survey 2"
+      },
+      {
+        "responseUserEmail": "userEmail9",
+        "answers": ["Beach", "Yes", "No"],
+        "title": "Travel Survey 3"
+      }
+    ]
+  },
+  {
+    "category": "Health and Fitness",
+    "title": "Fitness Habits and Preferences",
+    "description": "Share your fitness habits and preferences for a healthier lifestyle.",
+    "like": 22,
+    "dislike": 3,
+    "report": 3,
+    "timestamp": "2023-12-01T15:45:00Z",
+    "surveyStatus": "pending",
+    "totalVote": 12,
+    "surveyCreatedBy": "user4.displayName",
+    "surveyCreatorEmail": "user4.email",
+    "surveyCreatorImage": "user4.photoURL",
+    "questions": [
+      { "question1": "Do you enjoy regular workout sessions?" },
+      { "question2": "Do you prefer outdoor or indoor exercises?" },
+      { "question3": "Do you follow a specific diet for fitness?" }
+    ],
+    "Feedback": [
+      [
+        {
+          "proUserEmail": "pro_user_email7",
+          "comment": "Great survey! Motivated me to get back to the gym."
+        },
+        {
+          "proUserEmail": "pro_user_email8",
+          "comment": "Interesting questions! Made me think about my fitness journey."
+        },
+        {
+          "proUserEmail": "pro_user_email9",
+          "comment": "I wish there were more questions about nutrition."
+        }
+      ]
+    ],
+    "responses": [
+      {
+        "responseUserEmail": "userEmail10",
+        "answers": ["Yes", "Outdoor", "Yes"],
+        "title": "Fitness Survey 1"
+      },
+      {
+        "responseUserEmail": "userEmail11",
+        "answers": ["Yes", "Indoor", "No"],
+        "title": "Fitness Survey 2"
+      },
+      {
+        "responseUserEmail": "userEmail12",
+        "answers": ["No", "Outdoor", "Yes"],
+        "title": "Fitness Survey 3"
+      }
+    ]
+  },{
     "category": "Technology",
     "title": "Smart Home Devices Survey",
-    "description": "Share your experiences and preferences with smart home devices.",
-    "like": 8,
+    "description": "Share your experiences and preferences for smart home devices.",
+    "like": 20,
     "dislike": 2,
-    "report": 0,
-    "timestamp": "2023-12-01T10:00:00Z",
-    "surveyStatus": "published",
-    "totalVote": 0,
-    "surveyCreatedBy": "user6.displayName",
-    "surveyCreatorEmail": "user6.email",
-    "surveyCreatorImage": "user6.photoURL",
+    "report": 1,
+    "timestamp": "2023-12-01T14:00:00Z",
+    "surveyStatus": "pending",
+    "totalVote": 12,
+    "surveyCreatedBy": "user5.displayName",
+    "surveyCreatorEmail": "user5.email",
+    "surveyCreatorImage": "user5.photoURL",
     "questions": [
-      {
-        "question": "Do you own any smart home devices (e.g., smart thermostat, smart speaker, smart lights)?",
-        "options": ["Yes", "No"]
-      },
-
-      {
-        "question": "Would you consider expanding your smart home setup in the future?",
-        "options": ["Yes", "No"]
-      }
+      { "question1": "Do you own a smart thermostat?" },
+      { "question2": "Have you integrated voice assistants into your home?" },
+      { "question3": "Do you use smart lighting systems?" }
+    ],
+    "Feedback": [
+      [
+        { "proUserEmail": "pro_user_email1", "comment": "Interesting survey! Love discussing smart home tech." },
+        { "proUserEmail": "pro_user_email2", "comment": "Great questions! Made me think about upgrading my home." },
+        { "proUserEmail": "pro_user_email3", "comment": "I wish there were more questions about security systems." }
+      ]
+    ],
+    "responses": [
+      { "responseUserEmail": "userEmail4", "answers": ["Yes", "Yes", "Yes"], "title": "Smart Home Survey 1" },
+      { "responseUserEmail": "userEmail5", "answers": ["Yes", "Yes", "No"], "title": "Smart Home Survey 2" },
+      { "responseUserEmail": "userEmail6", "answers": ["Yes", "No", "Yes"], "title": "Smart Home Survey 3" }
     ]
   },
   {
     "category": "Technology",
     "title": "Gaming Preferences Survey",
-    "description": "Tell us about your gaming habits and preferences.",
-    "like": 15,
-    "dislike": 3,
-    "report": 1,
-    "timestamp": "2023-12-02T15:30:00Z",
+    "description": "Share your preferences and experiences in the world of gaming.",
+    "like": 30,
+    "dislike": 5,
+    "report": 0,
+    "timestamp": "2023-12-02T09:30:00Z",
     "surveyStatus": "pending",
-    "totalVote": 5,
-    "surveyCreatedBy": "user7.displayName",
-    "surveyCreatorEmail": "user7.email",
-    "surveyCreatorImage": "user7.photoURL",
+    "totalVote": 18,
+    "surveyCreatedBy": "user6.displayName",
+    "surveyCreatorEmail": "user6.email",
+    "surveyCreatorImage": "user6.photoURL",
     "questions": [
-      {
-        "question": "Do you enjoy playing video games?",
-        "options": ["Yes", "No"]
-      },
-      {
-        "question": "Do you enjoy playing video games?",
-        "options": ["Yes", "No"]
-      }
+      { "question1": "Do you prefer PC, console, or mobile gaming?" },
+      { "question2": "Have you tried cloud gaming services?" },
+      { "question3": "Do you participate in esports or competitive gaming?" }
+    ],
+    "Feedback": [
+      [
+        { "proUserEmail": "pro_user_email4", "comment": "Exciting survey! Can't wait to discuss gaming preferences." },
+        { "proUserEmail": "pro_user_email5", "comment": "Great questions! Made me reflect on my gaming setup." },
+        { "proUserEmail": "pro_user_email6", "comment": "I wish there were more questions about game development." }
+      ]
+    ],
+    "responses": [
+      { "responseUserEmail": "userEmail7", "answers": ["PC", "Yes", "Yes"], "title": "Gaming Survey 1" },
+      { "responseUserEmail": "userEmail8", "answers": ["Console", "No", "Yes"], "title": "Gaming Survey 2" },
+      { "responseUserEmail": "userEmail9", "answers": ["Mobile", "Yes", "No"], "title": "Gaming Survey 3" }
     ]
   }
 ]

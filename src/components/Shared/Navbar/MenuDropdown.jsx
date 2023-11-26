@@ -37,19 +37,19 @@ const MenuDropdown = () => {
         <div className="hidden md:block">
           {/* {(!user || !role || role == 'user') && 
           <button
-            onClick={() => setIsModalOpen(true)} className='disabled:cursor-not-allowed cursor-pointer hover:bg-neutral-100 py-3 px-4 text-sm font-semibold rounded-full  transition'>
+            onClick={() => setIsModalOpen(true)} className='px-4 py-3 text-sm font-semibold transition rounded-full cursor-pointer disabled:cursor-not-allowed hover:bg-neutral-100'>
             Host your home
           </button>
           } */}
 
           <Link to="/payment">
-            <button className=" cursor-pointer bg-neutral-200 py-3 px-4 text-sm font-semibold rounded-full  transition hover:bg-neutral-400">
+            <button className="px-4 py-3 text-sm font-semibold transition rounded-full cursor-pointer bg-neutral-200 hover:bg-neutral-400">
               Pro
             </button>
           </Link>
           <button
             onClick={() => setIsModalOpen(true)}
-            className="disabled:cursor-not-allowed cursor-pointer bg-neutral-200 py-3 px-4 text-sm font-semibold rounded-full  transition hover:bg-neutral-400 "
+            className="px-4 py-3 text-sm font-semibold transition rounded-full cursor-pointer disabled:cursor-not-allowed bg-neutral-200 hover:bg-neutral-400 "
           >
             Add Survey
           </button>
@@ -78,7 +78,7 @@ const MenuDropdown = () => {
           <div className="flex flex-col cursor-pointer">
             <Link
               to="/"
-              className="block md:hidden px-4 py-3 hover:bg-neutral-100 transition font-semibold"
+              className="block px-4 py-3 font-semibold transition md:hidden hover:bg-neutral-100"
             >
               Home
             </Link>
@@ -87,13 +87,13 @@ const MenuDropdown = () => {
               <>
                 <Link
                   to="/dashboard"
-                  className="px-4 py-3 hover:bg-neutral-100 transition font-semibold"
+                  className="px-4 py-3 font-semibold transition hover:bg-neutral-100"
                 >
                   Dashboard
                 </Link>
                 <button
                   onClick={logOut}
-                  className="px-4 py-3 hover:bg-neutral-100 transition font-semibold"
+                  className="px-4 py-3 font-semibold transition cursor-pointer hover:bg-neutral-100"
                 >
                   Logout
                 </button>
@@ -102,14 +102,14 @@ const MenuDropdown = () => {
               <>
                 <Link
                   to="/login"
-                  className="px-4 py-3 hover:bg-neutral-100 transition font-semibold"
+                  className="px-4 py-3 font-semibold transition hover:bg-neutral-100"
                 >
                   Login
                 </Link>
 
                 <Link
                   to="/signup"
-                  className="px-4 py-3 hover:bg-neutral-100 transition font-semibold"
+                  className="px-4 py-3 font-semibold transition hover:bg-neutral-100"
                 >
                   Sign Up
                 </Link>
