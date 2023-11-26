@@ -1,4 +1,3 @@
-import Button from "../components/Button/Button";
 import { useNavigate } from "react-router-dom";
 
 const ErrorPage = () => {
@@ -52,7 +51,7 @@ const ErrorPage = () => {
               <span>Go back</span>
             </button>
 
-            <Button label={"Take Me Home"} onClick={() => navigate("/")} />
+            <button label={"Take Me Home"} onClick={() => navigate("/")} />
           </div>
         </div>
       </div>
