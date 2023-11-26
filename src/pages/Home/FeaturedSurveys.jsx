@@ -23,7 +23,7 @@ const FeaturedSurveys = () => {
           subtitle={"Most Voted Survey"}
           center={"true"}
         ></Heading>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
           {/* Render the top 3 surveys */}
           {top3Surveys.map((survey, index) => (
             <div key={index}>

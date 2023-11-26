@@ -18,7 +18,7 @@ const CheckoutForm = ({ paymentInfo, closeModal }) => {
   const [clientSecret, setClientSecret] = useState("");
   const [processing, setProcessing] = useState(false);
   const navigate = useNavigate();
- console.log(paymentInfo, "info in chekcout");
+ console.log(paymentInfo, "info in checkcout");
   // Create Payment Intent
   useEffect(() => {
     // create payment intent

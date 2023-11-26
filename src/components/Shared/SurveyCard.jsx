@@ -3,7 +3,7 @@ import moment from "moment";
 const SurveyCard = ({ survey }) => {
   // Assuming the timestamp is a string in ISO 8601 format
   const formatDate = (timestamp) => {
-    return moment(timestamp).format("MMMM Do YYYY, h:mm:ss a");
+    return moment(timestamp).format("MMMM Do YYYY");
   };
   return (
     <div className="m-2 overflow-hidden bg-white rounded shadow-lg">
@@ -45,8 +45,8 @@ const SurveyCard = ({ survey }) => {
       <div className="px-6 py-4 border-t border-gray-200">
        
         <span className="mr-2">
-          <i className="text-red-500 far fa-thumbs-down"></i> timestamp:
-          {formatDate(survey.timestamp)}
+          <i className="text-red-500 far fa-thumbs-down"></i> Timestamp:  
+           {formatDate(survey.timestamp)}
         </span>
       </div>
     </div>

@@ -25,7 +25,7 @@ const RecentCreatedSurveys = () => {
           subtitle={"Latest 3 Surveys"}
           center={"true"}
         ></Heading>
-        <div className="grid grid-cols-1 md:grid-cols-3">
+        <div className="grid grid-cols-1 xl:grid-cols-3 md:grid-cols-2">
           {/* Render the most recently created 3 surveys */}
           {recentSurveys.map((survey, index) => (
             <div key={index}>
