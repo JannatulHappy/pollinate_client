@@ -1,13 +1,14 @@
 import React from "react";
 import Banner from "./Banner";
-import useSurveys from "../../hooks/useSurveys";
+import FeaturedSurveys from "./FeaturedSurveys";
 
 const Home = () => {
-  const { data } = useSurveys();
-  console.log("data-paici", data);
+
+  
   return (
     <div>
-      <Banner></Banner>
+          <Banner></Banner>
+          <FeaturedSurveys></FeaturedSurveys>
     </div>
   );
 };
