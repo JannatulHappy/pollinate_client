@@ -5,9 +5,9 @@ import { RiSurveyFill } from "react-icons/ri";
 const Logo = () => {
   return (
     <Link to="/">
-      <p className="w-[100px]">
+      <p className="flex items-center justify-center gap-1 ">
         {" "}
-        <RiSurveyFill /> <span className='text-black text-2xl '>POLLINATE</span>
+        <RiSurveyFill  /> <span className='text-2xl text-black '>POLLINATE</span>
       </p>
     </Link>
   );

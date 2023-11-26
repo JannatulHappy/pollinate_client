@@ -51,7 +51,7 @@ const CheckoutForm = ({ paymentInfo, closeModal }) => {
       setCardError(error.message);
     } else {
       setCardError("");
-      console.log("payment method", paymentMethod);
+      // console.log("payment method", paymentMethod);
     }
 
     setProcessing(true);
@@ -79,7 +79,7 @@ const CheckoutForm = ({ paymentInfo, closeModal }) => {
       try {
         const proPaymentInfo = {
           ...paymentInfo,
-          transactionId: paymentIntent.id,name:"hello,",
+          transactionId: paymentIntent.id,
           date: new Date(),
         };
         // save payment information to the server
@@ -119,10 +119,10 @@ const CheckoutForm = ({ paymentInfo, closeModal }) => {
             },
           }}
         />
-        <div className="flex mt-2 justify-around">
+        <div className="flex justify-around mt-2">
           <button
             type="button"
-            className="inline-flex justify-center rounded-md border border-transparent bg-red-100 px-4 py-2 text-sm font-medium text-red-900 hover:bg-red-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2"
+            className="inline-flex justify-center px-4 py-2 text-sm font-medium text-red-900 bg-red-100 border border-transparent rounded-md hover:bg-red-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2"
             onClick={closeModal}
           >
             Cancel
@@ -130,7 +130,7 @@ const CheckoutForm = ({ paymentInfo, closeModal }) => {
           <button
             type="submit"
             disabled={!stripe || !clientSecret || processing}
-            className="inline-flex justify-center rounded-md border border-transparent bg-green-100 px-4 py-2 text-sm font-medium text-green-900 hover:bg-green-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2"
+            className="inline-flex justify-center px-4 py-2 text-sm font-medium text-green-900 bg-green-100 border border-transparent rounded-md hover:bg-green-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2"
           >
             {processing ? (
               <ImSpinner9 className="m-auto animate-spin" size={24} />
@@ -140,7 +140,7 @@ const CheckoutForm = ({ paymentInfo, closeModal }) => {
           </button>
         </div>
       </form>
-      {cardError && <p className="text-red-600 ml-8">{cardError}</p>}
+      {cardError && <p className="ml-8 text-red-600">{cardError}</p>}
     </>
   );
 };
