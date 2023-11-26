@@ -4,6 +4,7 @@ import FeaturedSurveys from "./FeaturedSurveys";
 import RecentCreatedSurveys from "./RecentCreatedSurveys";
 import HowItWorksSection from "./HowItWorksSection";
 import FAQSection from "./FAQSection";
+import Testimonial from "./Testimonial";
 
 const Home = () => {
 
@@ -15,6 +16,7 @@ const Home = () => {
           <RecentCreatedSurveys></RecentCreatedSurveys>
           <HowItWorksSection></HowItWorksSection>
           <FAQSection></FAQSection>
+          <Testimonial></Testimonial>
     </div>
   );
 };
