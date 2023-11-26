@@ -35,16 +35,21 @@ const MenuDropdown = () => {
       <div className="flex flex-row items-center gap-3">
         {/* Become A Host btn */}
         <div className="hidden md:block">
-          {/* {(!user || !role || role == 'guest') && 
+          {/* {(!user || !role || role == 'user') && 
           <button
             onClick={() => setIsModalOpen(true)} className='disabled:cursor-not-allowed cursor-pointer hover:bg-neutral-100 py-3 px-4 text-sm font-semibold rounded-full  transition'>
             Host your home
           </button>
           } */}
 
+          <Link to="/payment">
+            <button className=" cursor-pointer bg-neutral-200 py-3 px-4 text-sm font-semibold rounded-full  transition hover:bg-neutral-400">
+              Pro
+            </button>
+          </Link>
           <button
             onClick={() => setIsModalOpen(true)}
-            className="disabled:cursor-not-allowed cursor-pointer hover:bg-neutral-100 py-3 px-4 text-sm font-semibold rounded-full  transition"
+            className="disabled:cursor-not-allowed cursor-pointer bg-neutral-200 py-3 px-4 text-sm font-semibold rounded-full  transition hover:bg-neutral-400 "
           >
             Add Survey
           </button>

@@ -4,6 +4,7 @@ import Home from "../pages/Home/Home";
 import ErrorPage from "../pages/ErrorPage";
 import Login from "../pages/Login/Login";
 import SignUp from "../pages/SignUp/SignUp";
+import Payment from "../pages/Payment/Payment";
 
 
 export const router = createBrowserRouter([
@@ -16,9 +17,13 @@ export const router = createBrowserRouter([
         path: "/",
         element: <Home />,
       },
-      
+      {
+        path: "/payment",
+        element: <Payment />,
+      },
     ],
   },
+
   {
     path: "/login",
     element: <Login />,
@@ -27,5 +32,5 @@ export const router = createBrowserRouter([
     path: "/signup",
     element: <SignUp />,
   },
-//  todo:dashboard and child
+  //  todo:dashboard and child
 ]);
