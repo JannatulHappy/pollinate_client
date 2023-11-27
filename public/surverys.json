@@ -6,7 +6,7 @@
     "like": 25,
     "dislike": 4,
     "report": 2,
-"image":"https://img.freepik.com/free-photo/3d-illustration-pen-putting-blue-ticks-paper_107791-15675.jpg",
+    "image": "https://img.freepik.com/free-photo/3d-illustration-pen-putting-blue-ticks-paper_107791-15675.jpg",
     "timestamp": "2023-11-30T12:45:00Z",
     "surveyStatus": "unpublished",
     "adminFeedback": "the status is unpublished. Just did it Emni",
@@ -23,14 +23,18 @@
       [
         {
           "proUserEmail": "pro_user1@email.com",
+          "proUserImage": "https://img.freepik.com/free-photo/3d-illustration-pen-putting-blue-ticks-paper_107791-15675.jpg",
+
           "comment": "Exciting survey! Can't wait to see the results."
         },
         {
           "proUserEmail": "pro_user2@email.com",
+          "proUserImage": "https://img.freepik.com/free-photo/3d-illustration-pen-putting-blue-ticks-paper_107791-15675.jpg",
           "comment": "Great questions! Very insightful."
         },
         {
           "proUserEmail": "pro_user3@email.com",
+          "proUserImage": "https://img.freepik.com/free-photo/3d-illustration-pen-putting-blue-ticks-paper_107791-15675.jpg",
           "comment": "I wish there were more questions about AI."
         }
       ]
@@ -76,14 +80,17 @@
       [
         {
           "proUserEmail": "pro_user_email1",
+          "proUserImage": "https://img.freepik.com/free-photo/3d-illustration-pen-putting-blue-ticks-paper_107791-15675.jpg",
           "comment": "Great survey! Loved participating."
         },
         {
           "proUserEmail": "pro_user_email2",
+          "proUserImage": "https://img.freepik.com/free-photo/3d-illustration-pen-putting-blue-ticks-paper_107791-15675.jpg",
           "comment": "Interesting questions. Can't wait to see the results!"
         },
         {
           "proUserEmail": "pro_user_email3",
+          "proUserImage": "https://img.freepik.com/free-photo/3d-illustration-pen-putting-blue-ticks-paper_107791-15675.jpg",
           "comment": "I wish there were more genre options."
         }
       ]
@@ -129,14 +136,17 @@
       [
         {
           "proUserEmail": "pro_user_email4",
+          "proUserImage": "https://img.freepik.com/free-photo/3d-illustration-pen-putting-blue-ticks-paper_107791-15675.jpg",
           "comment": "Exciting survey! Can't wait to plan my next trip."
         },
         {
           "proUserEmail": "pro_user_email5",
+          "proUserImage": "https://img.freepik.com/free-photo/3d-illustration-pen-putting-blue-ticks-paper_107791-15675.jpg",
           "comment": "Great questions! Reminded me of my travel experiences."
         },
         {
           "proUserEmail": "pro_user_email6",
+          "proUserImage": "https://img.freepik.com/free-photo/3d-illustration-pen-putting-blue-ticks-paper_107791-15675.jpg",
           "comment": "I wish there were more questions about cultural experiences."
         }
       ]
@@ -183,14 +193,17 @@
       [
         {
           "proUserEmail": "pro_user_email7",
+          "proUserImage": "https://img.freepik.com/free-photo/3d-illustration-pen-putting-blue-ticks-paper_107791-15675.jpg",
           "comment": "Great survey! Motivated me to get back to the gym."
         },
         {
           "proUserEmail": "pro_user_email8",
+          "proUserImage": "https://img.freepik.com/free-photo/3d-illustration-pen-putting-blue-ticks-paper_107791-15675.jpg",
           "comment": "Interesting questions! Made me think about my fitness journey."
         },
         {
           "proUserEmail": "pro_user_email9",
+          "proUserImage": "https://img.freepik.com/free-photo/3d-illustration-pen-putting-blue-ticks-paper_107791-15675.jpg",
           "comment": "I wish there were more questions about nutrition."
         }
       ]
@@ -236,14 +249,17 @@
       [
         {
           "proUserEmail": "pro_user_email1",
+          "proUserImage": "https://img.freepik.com/free-photo/3d-illustration-pen-putting-blue-ticks-paper_107791-15675.jpg",
           "comment": "Interesting survey! Love discussing smart home tech."
         },
         {
           "proUserEmail": "pro_user_email2",
+          "proUserImage": "https://img.freepik.com/free-photo/3d-illustration-pen-putting-blue-ticks-paper_107791-15675.jpg",
           "comment": "Great questions! Made me think about upgrading my home."
         },
         {
           "proUserEmail": "pro_user_email3",
+          "proUserImage": "https://img.freepik.com/free-photo/3d-illustration-pen-putting-blue-ticks-paper_107791-15675.jpg",
           "comment": "I wish there were more questions about security systems."
         }
       ]
@@ -289,14 +305,17 @@
       [
         {
           "proUserEmail": "pro_user_email4",
+          "proUserImage": "https://img.freepik.com/free-photo/3d-illustration-pen-putting-blue-ticks-paper_107791-15675.jpg",
           "comment": "Exciting survey! Can't wait to discuss gaming preferences."
         },
         {
           "proUserEmail": "pro_user_email5",
+          "proUserImage": "https://img.freepik.com/free-photo/3d-illustration-pen-putting-blue-ticks-paper_107791-15675.jpg",
           "comment": "Great questions! Made me reflect on my gaming setup."
         },
         {
           "proUserEmail": "pro_user_email6",
+          "proUserImage": "https://img.freepik.com/free-photo/3d-illustration-pen-putting-blue-ticks-paper_107791-15675.jpg",
           "comment": "I wish there were more questions about game development."
         }
       ]

@@ -15,6 +15,11 @@ export const updateUserStatus = async (email, status) => {
     const { data } = await axiosSecure.put(`/user/status/${email}`, { status });
     return data;
 }
+// get specific user role
+export const getUserRole = async (email) => {
+  const { data } = await axiosSecure(`/users/${email}`);
+  return data;
+};
 export const getToken = async (email) => {
   const { data } = await axiosSecure.post("/jwt", email);
   console.log("token received from server ...");

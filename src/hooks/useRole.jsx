@@ -23,19 +23,20 @@
 
 /*-------Using TanStack Query--------*/
 import { useQuery } from "@tanstack/react-query";
-import { getUserRole } from "../api/auth";
+
 import useAuth from "./useAuth";
+import { getUserRole } from "../api/auth";
 
 const useRole = () => {
   const { user, loading } = useAuth();
-  const { data: role, isLoading } = useQuery({
+  const { data: loggedUserData, isLoading:loadingOfLogged } = useQuery({
     enabled: !loading && !!user?.email,
     queryFn: async () => {
       return getUserRole(user?.email);
     },
-    queryKey: ["role"],
+    queryKey: ["loggedUserRole"],
   });
-  return [role, isLoading];
+  return { loggedUserData, loadingOfLogged };
 };
 
 export default useRole;

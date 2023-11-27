@@ -1,5 +1,5 @@
 import moment from "moment";
-
+import { Link } from "react-router-dom";
 const SurveyCard = ({ survey }) => {
   // Assuming the timestamp is a string in ISO 8601 format
   const formatDate = (timestamp) => {
@@ -23,11 +23,12 @@ const SurveyCard = ({ survey }) => {
           {/* Like and Dislike Count */}
           <div className="flex items-center">
             <span className="mr-2">
-              <i className="text-green-500 far fa-thumbs-up"></i> Like:{survey.like}
+              <i className="text-green-500 far fa-thumbs-up"></i> Like:
+              {survey.like}
             </span>
             <span className="mr-2">
-              <i className="text-red-500 far fa-thumbs-down"></i>{" "}
-              Dislike: {survey.dislike}
+              <i className="text-red-500 far fa-thumbs-down"></i> Dislike:{" "}
+              {survey.dislike}
             </span>
           </div>
 
@@ -42,12 +43,14 @@ const SurveyCard = ({ survey }) => {
         </div>
       </div>
       {/* Survey Creator Information */}
-      <div className="px-6 py-4 border-t border-gray-200">
-       
+      <div className="flex items-center justify-between px-6 py-4 border-t border-gray-200">
         <span className="mr-2">
-          <i className="text-red-500 far fa-thumbs-down"></i> Timestamp:  
-           {formatDate(survey.timestamp)}
+          <i className="text-red-500 far fa-thumbs-down"></i> Created: {" "}
+          {formatDate(survey.timestamp)}
         </span>
+        <Link to={`/surveys/${survey._id}`}>
+          <button className="px-4 py-3 text-lg font-medium bg-green-100 rounded-lg hover:bg-green-200">Participate In Survey</button>
+        </Link>
       </div>
     </div>
   );

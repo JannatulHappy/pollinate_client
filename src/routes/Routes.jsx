@@ -9,6 +9,7 @@ import AboutUs from "../pages/AboutUs/AboutUs";
 import ContactUs from "../pages/ContactUs/ContactUs";
 import PrivacyPolicy from "../pages/PrivacyPolicy/PrivacyPolicy";
 import Surveys from "../pages/Surveys/Surveys";
+import SurveyDetails from "../pages/Surveys/SurveyDetails/SurveyDetails";
 
 
 export const router = createBrowserRouter([
@@ -28,6 +29,10 @@ export const router = createBrowserRouter([
       {
         path: "/surveys",
         element: <Surveys />,
+      },
+      {
+        path: "/surveys/:id",
+        element: <SurveyDetails></SurveyDetails>
       },
       {
         path: "/privacy-policy",
