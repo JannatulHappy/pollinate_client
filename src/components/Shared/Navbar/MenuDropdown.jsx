@@ -52,9 +52,19 @@ const MenuDropdown = () => {
               About Us
             </button>
           </Link>
+          <Link to="/surveys">
+            <button className="px-4 py-3 text-sm font-semibold transition rounded-full cursor-pointer bg-neutral-200 hover:bg-neutral-400">
+              Surveys
+            </button>
+          </Link>
+          <Link to="/privacy-policy">
+            <button className="px-4 py-3 text-sm font-semibold transition rounded-full cursor-pointer bg-neutral-200 hover:bg-neutral-400">
+             Privacy & Policy
+            </button>
+          </Link>
           <Link to="contact-us">
             <button className="px-4 py-3 text-sm font-semibold transition rounded-full cursor-pointer bg-neutral-200 hover:bg-neutral-400">
-             Contact Us
+              Contact Us
             </button>
           </Link>
           <button

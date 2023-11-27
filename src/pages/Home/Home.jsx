@@ -7,16 +7,14 @@ import FAQSection from "./FAQSection";
 import Testimonial from "./Testimonial";
 
 const Home = () => {
-
-  
   return (
     <div>
-          <Banner></Banner>
-          <FeaturedSurveys></FeaturedSurveys>
-          <RecentCreatedSurveys></RecentCreatedSurveys>
-          <HowItWorksSection></HowItWorksSection>
-          <FAQSection></FAQSection>
-          <Testimonial></Testimonial>
+      <Banner></Banner>
+      <FeaturedSurveys></FeaturedSurveys>
+      <RecentCreatedSurveys></RecentCreatedSurveys>
+      <HowItWorksSection></HowItWorksSection>
+      <FAQSection></FAQSection>
+      <Testimonial></Testimonial>
     </div>
   );
 };

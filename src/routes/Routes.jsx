@@ -7,6 +7,8 @@ import SignUp from "../pages/SignUp/SignUp";
 import Payment from "../pages/Payment/Payment";
 import AboutUs from "../pages/AboutUs/AboutUs";
 import ContactUs from "../pages/ContactUs/ContactUs";
+import PrivacyPolicy from "../pages/PrivacyPolicy/PrivacyPolicy";
+import Surveys from "../pages/Surveys/Surveys";
 
 
 export const router = createBrowserRouter([
@@ -24,13 +26,21 @@ export const router = createBrowserRouter([
         element: <Payment />,
       },
       {
+        path: "/surveys",
+        element: <Surveys />,
+      },
+      {
+        path: "/privacy-policy",
+        element: <PrivacyPolicy></PrivacyPolicy>
+      },
+      {
         path: "/about-us",
         element: <AboutUs></AboutUs>,
       },
       {
         path: "/contact-us",
         element: <ContactUs></ContactUs>,
-      }
+      },
     ],
   },
 
