@@ -47,6 +47,11 @@ const MenuDropdown = () => {
               Pro
             </button>
           </Link>
+          <Link to="about-us">
+            <button className="px-4 py-3 text-sm font-semibold transition rounded-full cursor-pointer bg-neutral-200 hover:bg-neutral-400">
+             About Us
+            </button>
+          </Link>
           <button
             onClick={() => setIsModalOpen(true)}
             className="px-4 py-3 text-sm font-semibold transition rounded-full cursor-pointer disabled:cursor-not-allowed bg-neutral-200 hover:bg-neutral-400 "

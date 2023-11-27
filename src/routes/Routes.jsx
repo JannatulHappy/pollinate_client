@@ -5,6 +5,7 @@ import ErrorPage from "../pages/ErrorPage";
 import Login from "../pages/Login/Login";
 import SignUp from "../pages/SignUp/SignUp";
 import Payment from "../pages/Payment/Payment";
+import AboutUs from "../pages/AboutUs/AboutUs";
 
 
 export const router = createBrowserRouter([
@@ -21,6 +22,10 @@ export const router = createBrowserRouter([
         path: "/payment",
         element: <Payment />,
       },
+      {
+        path: "/about-us",
+        element: <AboutUs></AboutUs>,
+      }
     ],
   },
 
@@ -28,6 +33,7 @@ export const router = createBrowserRouter([
     path: "/login",
     element: <Login />,
   },
+
   {
     path: "/signup",
     element: <SignUp />,
