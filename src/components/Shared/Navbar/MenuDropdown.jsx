@@ -49,7 +49,12 @@ const MenuDropdown = () => {
           </Link>
           <Link to="about-us">
             <button className="px-4 py-3 text-sm font-semibold transition rounded-full cursor-pointer bg-neutral-200 hover:bg-neutral-400">
-             About Us
+              About Us
+            </button>
+          </Link>
+          <Link to="contact-us">
+            <button className="px-4 py-3 text-sm font-semibold transition rounded-full cursor-pointer bg-neutral-200 hover:bg-neutral-400">
+             Contact Us
             </button>
           </Link>
           <button
