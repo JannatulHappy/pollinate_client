@@ -16,6 +16,8 @@ const SurveyDetails = () => {
   const [submitVote, setSubmitVote] = useState("no");
   const [selectedOptions, setSelectedOptions] = useState({});
   const [comment, setComment] = useState(null);
+  const [isLike, setIsLike] = useState("");
+
   const [isInclude, setIsInclude] = useState(false);
 
   const { isLoading, isError, data, error } = useQuery({
@@ -32,7 +34,6 @@ const SurveyDetails = () => {
       setIsInclude(true);
     }
   }, [data, loggedUserData]);
-  
 
   const handleVote = async (e) => {
     e.preventDefault();
@@ -53,10 +54,13 @@ const SurveyDetails = () => {
           },
         ]);
       }
-      console.log("answers :", selectedOptions);
-      console.log("TotalVote :", data.totalVote+1)
-      console.log("Like:", data.like+1)
-      console.log("dislike :", data.dislike+1)
+     
+     const like= isLike==="yes"?data?.like+1 :data?.like
+     const dislike= isLike==="no"?data?.dislike+1:data.dislike
+     console.log("answers :", selectedOptions);
+      console.log("TotalVote :", data.totalVote + 1);
+      console.log("like:",like, "dislike:", dislike)
+    
 
       // Assuming you have an async function to submit the vote
       try {
@@ -137,6 +141,12 @@ const SurveyDetails = () => {
             <p className="text-lg">
               Total Votes: <span className="font-bold">{survey.totalVote}</span>
             </p>
+            <p className="text-lg">
+              Total Like: <span className="font-bold">{survey.like}</span>
+            </p>
+            <p className="text-lg">
+              Total Dislike: <span className="font-bold">{survey.dislike}</span>
+            </p>
           </div>
         </div>
 
@@ -155,7 +165,7 @@ const SurveyDetails = () => {
           <div className="w-1/2">
             <form className="" onSubmit={handleVote}>
               {/* Render questions for voting */}
-              <div className="mb-8">
+              <div className="">
                 <h2 className="mb-4 text-xl font-bold">Poll Questions:</h2>
                 {survey.questions.map((question, index) => (
                   <div key={index} className="mb-4">
@@ -184,7 +194,21 @@ const SurveyDetails = () => {
                   </div>
                 ))}
               </div>
-
+              <div className="space-x-4 ">
+                <p className="text-lg font-bold">Do You like this Survey?</p>
+                <select
+                  className="px-4 py-2 bg-gray-300 rounded-md"
+                  value={isLike}
+                  onChange={(e) => setIsLike(e.target.value)}
+                  required
+                >
+                  <option value="" disabled>
+                    Select an option
+                  </option>
+                  <option value="yes">Like</option>
+                  <option value="no">Dislike</option>
+                </select>
+              </div>
               {/* Render input field for comments */}
               {loggedUserData && loggedUserData.role === "pro-user" && (
                 <div className="mb-4">
