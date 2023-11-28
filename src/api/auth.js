@@ -12,9 +12,9 @@ export const saveUser = async (user) => {
 };
 // update  pro user status after payment
 export const updateUserStatus = async (email, status) => {
-    const { data } = await axiosSecure.put(`/user/status/${email}`, { status });
-    return data;
-}
+  const { data } = await axiosSecure.put(`/user/status/${email}`, { status });
+  return data;
+};
 // get specific user role
 export const getUserRole = async (email) => {
   const { data } = await axiosSecure(`/users/${email}`);

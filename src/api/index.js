@@ -2,7 +2,7 @@ import axios from "axios";
 import { clearCookie } from "./auth";
 
 const axiosSecure = axios.create({
-  baseURL: "http://localhost:8000",
+  baseURL: "http://localhost:9000",
   withCredentials: true,
 });
 

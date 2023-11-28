@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { useNavigate, useParams } from "react-router-dom";
-import { getSingleSurvey } from "../../../api/surveys";
+import { getSingleSurvey, updateSurveys } from "../../../api/surveys";
 import useAuth from "../../../hooks/useAuth";
 import useRole from "../../../hooks/useRole";
 import Container from "../../../components/Shared/Container";
@@ -21,7 +21,7 @@ const SurveyDetails = () => {
   // const [report, setReport] = useState(false);
   const [isInclude, setIsInclude] = useState(false);
 
-  const { isLoading, isError, data, error } = useQuery({
+  const { isLoading, isError, data, error, refetch } = useQuery({
     queryKey: ["singleSurvey", useParams.id],
     queryFn: () => getSingleSurvey(params.id),
   });
@@ -53,44 +53,50 @@ const SurveyDetails = () => {
     }
 
     if (user) {
-     
-      
-
-
       // const dislike = isLike === "no" ? data?.dislike + 1 : data.dislike;
 
       // console.log("answers :", selectedOptions);
       // console.log("TotalVote :", data.totalVote + 1);
       // console.log("like:", like, "dislike:", dislike);
+
       const updatedData = {
         like: isLike === "yes" ? data?.like + 1 : data?.like,
         dislike: isLike === "no" ? data?.dislike + 1 : data.dislike,
 
         totalVote: data.totalVote + 1,
 
-        Feedback: {
-          proUserName: user?.displayName || loggedUserData?.name,
-          proUserEmail: user?.email,
-          proUserImage: user?.photoURL,
-          comment: comment,
-        },
+        Feedback: comment
+          ? [
+              ...data?.Feedback,
+              {
+                proUserName: user?.displayName || loggedUserData?.name,
+                proUserEmail: user?.email,
+                proUserImage: user?.photoURL,
+                comment: comment,
+              },
+            ]
+          : null,
 
         responses: [
+          ...data?.responses,
           {
             responseUserEmail: user.email,
-            answers: {
-              question1: selectedOptions.question1,
-              question2: selectedOptions.question2,
-              question3: selectedOptions.question3,
-            },
+            answers: [
+              {
+                question1: selectedOptions.question1,
+                question2: selectedOptions.question2,
+                question3: selectedOptions.question3,
+              },
+            ],
           },
         ],
       };
       setSubmitVote("yes");
       console.log("updated", updatedData);
+      updateSurveys(updatedData, params.id);
+      
     }
-
-    //   todo:call refetch after submit the data to backend
+    refetch();
   };
 
   if (isLoading || loadingOfLogged) {
@@ -111,7 +117,7 @@ const SurveyDetails = () => {
       type: "bar",
     },
     xaxis: {
-      categories: ["Like", "Dislike", "Report", "Total Votes"],
+      categories: ["Like", "Dislike", "Total Votes"],
     },
   };
 
@@ -125,10 +131,7 @@ const SurveyDetails = () => {
       name: "Dislike",
       data: [survey.dislike],
     },
-    {
-      name: "Report",
-      data: [survey.report],
-    },
+   
     {
       name: "Total Votes",
       data: [survey.totalVote],
@@ -250,7 +253,7 @@ const SurveyDetails = () => {
               {/* check if the role of the user is user || pro-user */}
               {loggedUserData?.role === "user" ||
               loggedUserData?.role === "pro-user" ? (
-                <div className="mb-4">
+                <div className="my-6">
                   <button
                     type="submit"
                     className="px-6 py-3 text-white bg-green-500 rounded-md"
