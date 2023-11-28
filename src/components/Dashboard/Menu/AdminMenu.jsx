@@ -14,12 +14,8 @@ const AdminMenu = () => {
           label="All Payments"
           address="/dashboard/all-payments"
         />
-        user-survey-response
-        <MenuItem
-          icon={FaUserCog}
-          label="Manage Users"
-          address="/dashboard/all-surveys"
-        />
+       
+       
         <MenuItem
           icon={FaUserCog}
           label="Survey Response"

@@ -7,7 +7,7 @@ import { ImSpinner9 } from "react-icons/im";
 import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { createPaymentIntent, savePaymentInfo } from "../../api/payments";
-import { updateUserStatus } from "../../api/auth";
+import { updateRole} from "../../api/auth";
 
 
 const CheckoutForm = ({ paymentInfo, closeModal }) => {
@@ -88,7 +88,7 @@ const CheckoutForm = ({ paymentInfo, closeModal }) => {
         await savePaymentInfo(proPaymentInfo);
         // update room status in db
         
-        await updateUserStatus(paymentInfo?.proUserEmail, "pro-user");
+        await updateRole(paymentInfo?.proUserEmail, "pro-user");
         const text = `Booking successful ${paymentIntent.id}`;
         toast.success(text);
         navigate("/");
