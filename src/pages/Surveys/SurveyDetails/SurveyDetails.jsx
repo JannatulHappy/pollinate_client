@@ -63,7 +63,7 @@ const SurveyDetails = () => {
         like: isLike === "yes" ? data?.like + 1 : data?.like,
         dislike: isLike === "no" ? data?.dislike + 1 : data.dislike,
 
-        totalVote: data.totalVote + 1,
+        totalVote: data?.totalVote + 1,
 
         Feedback: comment
           ? [
@@ -125,19 +125,19 @@ const SurveyDetails = () => {
   const chartSeries = [
     {
       name: "Like",
-      data: [survey.like],
+      data: [survey?.like],
     },
     {
       name: "Dislike",
-      data: [survey.dislike],
+      data: [survey?.dislike],
     },
    
     {
       name: "Total Votes",
-      data: [survey.totalVote],
+      data: [survey?.totalVote],
     },
   ];
-
+{submitVote && refetch()}
   // console.log("paici", submitVote);
   // console.log("isinclude", isInclude);
   return (

@@ -10,8 +10,17 @@ import ContactUs from "../pages/ContactUs/ContactUs";
 import PrivacyPolicy from "../pages/PrivacyPolicy/PrivacyPolicy";
 import Surveys from "../pages/Surveys/Surveys";
 import SurveyDetails from "../pages/Surveys/SurveyDetails/SurveyDetails";
-
-
+import SurveyorRoute from "./SurveyorRoute";
+import AdminRoute from "./AdminRoute";
+import PrivateRoute from "./PrivateRoute";
+import SurveyResponse from "../pages/Dashboard/Surveyor/SurveyResponse";
+import ManageUsers from "../pages/Dashboard/Admin/ManageUsers";
+import UserPayments from "../pages/Dashboard/Admin/UserPayments";
+import AllSurveys from "../pages/Dashboard/Admin/AllSurveys";
+import DashboardLayout from "../layouts/DashboardLayout";
+import AddSurvey from "../pages/Dashboard/Surveyor/AddSurvey"
+import SurveyList from "../pages/Dashboard/Surveyor/SurveyList"
+import UserSurveyResponse from "../pages/Dashboard/Admin/UserSurveyResponse";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -32,11 +41,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "/surveys/:id",
-        element: <SurveyDetails></SurveyDetails>
+        element: <SurveyDetails></SurveyDetails>,
       },
       {
         path: "/privacy-policy",
-        element: <PrivacyPolicy></PrivacyPolicy>
+        element: <PrivacyPolicy></PrivacyPolicy>,
       },
       {
         path: "/about-us",
@@ -58,5 +67,85 @@ export const router = createBrowserRouter([
     path: "/signup",
     element: <SignUp />,
   },
-  //  todo:dashboard and child
+  {
+    path: "/dashboard",
+    element: (
+      <PrivateRoute>
+        <DashboardLayout></DashboardLayout>
+      </PrivateRoute>
+    ),
+    children: [
+      {
+        path: "add-survey",
+        element: (
+          <PrivateRoute>
+            <SurveyorRoute>
+              <AddSurvey></AddSurvey>{" "}
+            </SurveyorRoute>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "survey-list",
+        element: (
+          <PrivateRoute>
+            <SurveyorRoute>
+              <SurveyList></SurveyList>
+            </SurveyorRoute>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "survey-response",
+        element: (
+          <PrivateRoute>
+            <SurveyorRoute>
+              {" "}
+              <SurveyResponse></SurveyResponse>
+            </SurveyorRoute>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "manage-users",
+        element: (
+          <PrivateRoute>
+            <AdminRoute>
+              <ManageUsers></ManageUsers>
+            </AdminRoute>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "user-survey-response",
+        element: (
+          <PrivateRoute>
+            <AdminRoute>
+              <UserSurveyResponse></UserSurveyResponse>
+            </AdminRoute>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "all-payments",
+        element: (
+          <PrivateRoute>
+            <AdminRoute>
+              <UserPayments></UserPayments>
+            </AdminRoute>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "all-surveys",
+        element: (
+          <PrivateRoute>
+            <AdminRoute>
+              <AllSurveys></AllSurveys>
+            </AdminRoute>
+          </PrivateRoute>
+        ),
+      },
+    ],
+  },
 ]);

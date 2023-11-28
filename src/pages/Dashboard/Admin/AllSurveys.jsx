@@ -1,11 +1,11 @@
 import React from 'react';
 
-const HostRoute = () => {
+const AllSurveys = () => {
     return (
         <div>
-            
+            all
         </div>
     );
 };
 
-export default HostRoute;
+export default AllSurveys;
