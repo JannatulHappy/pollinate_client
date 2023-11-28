@@ -32,6 +32,7 @@ const SurveyDetails = () => {
       setIsInclude(true);
     }
   }, [data, loggedUserData]);
+  
 
   const handleVote = async (e) => {
     e.preventDefault();
@@ -53,6 +54,9 @@ const SurveyDetails = () => {
         ]);
       }
       console.log("answers :", selectedOptions);
+      console.log("TotalVote :", data.totalVote+1)
+      console.log("Like:", data.like+1)
+      console.log("dislike :", data.dislike+1)
 
       // Assuming you have an async function to submit the vote
       try {
