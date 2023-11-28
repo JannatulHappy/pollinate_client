@@ -20,39 +20,53 @@
       { "question3": "Have you tried virtual reality (VR) gaming?" }
     ],
     "Feedback": [
-      [
-        {
+      
+        {"proUserName":"Happy",
           "proUserEmail": "pro_user1@email.com",
           "proUserImage": "https://img.freepik.com/free-photo/3d-illustration-pen-putting-blue-ticks-paper_107791-15675.jpg",
 
           "comment": "Exciting survey! Can't wait to see the results."
         },
         {
+          "proUserName": "Happy",
           "proUserEmail": "pro_user2@email.com",
           "proUserImage": "https://img.freepik.com/free-photo/3d-illustration-pen-putting-blue-ticks-paper_107791-15675.jpg",
           "comment": "Great questions! Very insightful."
         },
         {
+          "proUserName": "Happy",
           "proUserEmail": "pro_user3@email.com",
           "proUserImage": "https://img.freepik.com/free-photo/3d-illustration-pen-putting-blue-ticks-paper_107791-15675.jpg",
           "comment": "I wish there were more questions about AI."
         }
-      ]
+      
     ],
     "responses": [
       {
         "responseUserEmail": "userEmail1",
-        "answers": ["Yes", "yes", "Yes"],
+        "answers": {
+          "question1": "Yes",
+          "question2": "No",
+          "question3": "Yes"
+        },
         "title": "Tech Survey 1"
       },
       {
         "responseUserEmail": "userEmail2",
-        "answers": ["Yes", "yes", "Yes"],
+        "answers": {
+          "question1": "Yes",
+          "question2": "No",
+          "question3": "Yes"
+        },
         "title": "Tech Survey 2"
       },
       {
         "responseUserEmail": "userEmail3",
-        "answers": ["Yes", "yes", "Yes"],
+        "answers": {
+          "question1": "Yes",
+          "question2": "No",
+          "question3": "Yes"
+        },
         "title": "Tech Survey 3"
       }
     ]
@@ -76,39 +90,54 @@
       { "question2": "Do you enjoy having food in a restaurant?" },
       { "question3": "Do you follow any specific diet plan?" }
     ],
-    "Feedback": [
+    "Feedback": 
       [
         {
+          "proUserName": "Happy",
           "proUserEmail": "pro_user_email1",
           "proUserImage": "https://img.freepik.com/free-photo/3d-illustration-pen-putting-blue-ticks-paper_107791-15675.jpg",
           "comment": "Great survey! Loved participating."
         },
         {
+          "proUserName": "Happy",
           "proUserEmail": "pro_user_email2",
           "proUserImage": "https://img.freepik.com/free-photo/3d-illustration-pen-putting-blue-ticks-paper_107791-15675.jpg",
           "comment": "Interesting questions. Can't wait to see the results!"
         },
         {
+          "proUserName": "Happy",
           "proUserEmail": "pro_user_email3",
           "proUserImage": "https://img.freepik.com/free-photo/3d-illustration-pen-putting-blue-ticks-paper_107791-15675.jpg",
           "comment": "I wish there were more genre options."
         }
       ]
-    ],
+    ,
     "responses": [
       {
         "responseUserEmail": "userEmail4",
-        "answers": ["Yes", "Yes", "No"],
+        "answers": {
+          "question1": "Yes",
+          "question2": "No",
+          "question3": "Yes"
+        },
         "title": "Cuisine Survey 1"
       },
       {
         "responseUserEmail": "userEmail5",
-        "answers": ["Yes", "Yes", "Yes"],
+        "answers": {
+          "question1": "Yes",
+          "question2": "No",
+          "question3": "Yes"
+        },
         "title": "Cuisine Survey 2"
       },
       {
         "responseUserEmail": "userEmail6",
-        "answers": ["Yes", "Yes", "No"],
+        "answers": {
+          "question1": "Yes",
+          "question2": "No",
+          "question3": "Yes"
+        },
         "title": "Cuisine Survey 3"
       }
     ]
@@ -135,16 +164,19 @@
     "Feedback": [
       [
         {
+          "proUserName": "Happy",
           "proUserEmail": "pro_user_email4",
           "proUserImage": "https://img.freepik.com/free-photo/3d-illustration-pen-putting-blue-ticks-paper_107791-15675.jpg",
           "comment": "Exciting survey! Can't wait to plan my next trip."
         },
         {
+          "proUserName": "Happy",
           "proUserEmail": "pro_user_email5",
           "proUserImage": "https://img.freepik.com/free-photo/3d-illustration-pen-putting-blue-ticks-paper_107791-15675.jpg",
           "comment": "Great questions! Reminded me of my travel experiences."
         },
         {
+          "proUserName": "Happy",
           "proUserEmail": "pro_user_email6",
           "proUserImage": "https://img.freepik.com/free-photo/3d-illustration-pen-putting-blue-ticks-paper_107791-15675.jpg",
           "comment": "I wish there were more questions about cultural experiences."
@@ -190,23 +222,26 @@
       { "question3": "Do you follow a specific diet for fitness?" }
     ],
     "Feedback": [
-      [
+      
         {
+          "proUserName": "Happy",
           "proUserEmail": "pro_user_email7",
           "proUserImage": "https://img.freepik.com/free-photo/3d-illustration-pen-putting-blue-ticks-paper_107791-15675.jpg",
           "comment": "Great survey! Motivated me to get back to the gym."
         },
         {
+          "proUserName": "Happy",
           "proUserEmail": "pro_user_email8",
           "proUserImage": "https://img.freepik.com/free-photo/3d-illustration-pen-putting-blue-ticks-paper_107791-15675.jpg",
           "comment": "Interesting questions! Made me think about my fitness journey."
         },
         {
+          "proUserName": "Happy",
           "proUserEmail": "pro_user_email9",
           "proUserImage": "https://img.freepik.com/free-photo/3d-illustration-pen-putting-blue-ticks-paper_107791-15675.jpg",
           "comment": "I wish there were more questions about nutrition."
         }
-      ]
+      
     ],
     "responses": [
       {
@@ -246,38 +281,53 @@
       { "question3": "Do you use smart lighting systems?" }
     ],
     "Feedback": [
-      [
+      
         {
+          "proUserName": "Happy",
           "proUserEmail": "pro_user_email1",
           "proUserImage": "https://img.freepik.com/free-photo/3d-illustration-pen-putting-blue-ticks-paper_107791-15675.jpg",
           "comment": "Interesting survey! Love discussing smart home tech."
         },
         {
+          "proUserName": "Happy",
           "proUserEmail": "pro_user_email2",
           "proUserImage": "https://img.freepik.com/free-photo/3d-illustration-pen-putting-blue-ticks-paper_107791-15675.jpg",
           "comment": "Great questions! Made me think about upgrading my home."
         },
         {
+          "proUserName": "Happy",
           "proUserEmail": "pro_user_email3",
           "proUserImage": "https://img.freepik.com/free-photo/3d-illustration-pen-putting-blue-ticks-paper_107791-15675.jpg",
           "comment": "I wish there were more questions about security systems."
         }
-      ]
+      
     ],
     "responses": [
       {
         "responseUserEmail": "userEmail4",
-        "answers": ["Yes", "Yes", "Yes"],
+        "answers": {
+          "question1": "Yes",
+          "question2": "No",
+          "question3": "Yes"
+        },
         "title": "Smart Home Survey 1"
       },
       {
         "responseUserEmail": "userEmail5",
-        "answers": ["Yes", "Yes", "No"],
+        "answers": {
+          "question1": "Yes",
+          "question2": "No",
+          "question3": "Yes"
+        },
         "title": "Smart Home Survey 2"
       },
       {
         "responseUserEmail": "userEmail6",
-        "answers": ["Yes", "No", "Yes"],
+        "answers": {
+          "question1": "Yes",
+          "question2": "No",
+          "question3": "Yes"
+        },
         "title": "Smart Home Survey 3"
       }
     ]
@@ -302,38 +352,53 @@
       { "question3": "Do you participate in esports or competitive gaming?" }
     ],
     "Feedback": [
-      [
+      
         {
+          "proUserName": "Happy",
           "proUserEmail": "pro_user_email4",
           "proUserImage": "https://img.freepik.com/free-photo/3d-illustration-pen-putting-blue-ticks-paper_107791-15675.jpg",
           "comment": "Exciting survey! Can't wait to discuss gaming preferences."
         },
         {
           "proUserEmail": "pro_user_email5",
+          "proUserName": "Happy",
           "proUserImage": "https://img.freepik.com/free-photo/3d-illustration-pen-putting-blue-ticks-paper_107791-15675.jpg",
           "comment": "Great questions! Made me reflect on my gaming setup."
         },
         {
+          "proUserName": "Happy",
           "proUserEmail": "pro_user_email6",
           "proUserImage": "https://img.freepik.com/free-photo/3d-illustration-pen-putting-blue-ticks-paper_107791-15675.jpg",
           "comment": "I wish there were more questions about game development."
         }
-      ]
+      
     ],
     "responses": [
       {
         "responseUserEmail": "userEmail7",
-        "answers": ["Yes", "yes", "Yes"],
+        "answers": {
+          "question1": "Yes",
+          "question2": "No",
+          "question3": "Yes"
+        },
         "title": "Gaming Survey 1"
       },
       {
         "responseUserEmail": "userEmail8",
-        "answers": ["Console", "No", "Yes"],
+        "answers": {
+          "question1": "Yes",
+          "question2": "No",
+          "question3": "Yes"
+        },
         "title": "Gaming Survey 2"
       },
       {
         "responseUserEmail": "userEmail9",
-        "answers": ["Yes", "No", "Yes"],
+        "answers": {
+          "question1": "Yes",
+          "question2": "No",
+          "question3": "Yes"
+        },
         "title": "Gaming Survey 3"
       }
     ]
