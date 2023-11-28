@@ -10,3 +10,7 @@ export const savePaymentInfo = async (paymentInfo) => {
   const { data } = await axiosSecure.post("/payments", paymentInfo);
   return data;
 };
+export const getAllPayments = async () => {
+  const { data } = await axiosSecure("/payments");
+  return data;
+};
