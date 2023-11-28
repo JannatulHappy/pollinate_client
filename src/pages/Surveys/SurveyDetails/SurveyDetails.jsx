@@ -6,6 +6,7 @@ import useAuth from "../../../hooks/useAuth";
 import useRole from "../../../hooks/useRole";
 import Container from "../../../components/Shared/Container";
 import Loading from "../../../components/Shared/Loading";
+import ReactApexChart from "react-apexcharts";
 
 const SurveyDetails = () => {
   const { user } = useAuth();
@@ -21,6 +22,7 @@ const SurveyDetails = () => {
     queryKey: ["singleSurvey", useParams.id],
     queryFn: () => getSingleSurvey(params.id),
   });
+
   useEffect(() => {
     const response = data?.responses.map(
       (response) => response.responseUserEmail
@@ -30,6 +32,7 @@ const SurveyDetails = () => {
       setIsInclude(true);
     }
   }, [data, loggedUserData]);
+
   const handleVote = async (e) => {
     e.preventDefault();
 
@@ -64,7 +67,7 @@ const SurveyDetails = () => {
     }
     //   todo:call refetch after submit the data to backend
   };
-  console.log("paici", submitVote);
+
   if (isLoading || loadingOfLogged) {
     return <Loading></Loading>;
   }
@@ -75,6 +78,37 @@ const SurveyDetails = () => {
 
   const survey = data;
 
+  // Define chart options
+  const chartOptions = {
+    chart: {
+      type: "bar",
+    },
+    xaxis: {
+      categories: ["Like", "Dislike", "Report", "Total Votes"],
+    },
+  };
+
+  // Define chart series data based on like, dislike, report, and totalVote
+  const chartSeries = [
+    {
+      name: "Like",
+      data: [survey.like],
+    },
+    {
+      name: "Dislike",
+      data: [survey.dislike],
+    },
+    {
+      name: "Report",
+      data: [survey.report],
+    },
+    {
+      name: "Total Votes",
+      data: [survey.totalVote],
+    },
+  ];
+
+  console.log("paici", submitVote);
   console.log("isinclude", isInclude);
   return (
     <Container>
@@ -102,78 +136,88 @@ const SurveyDetails = () => {
           </div>
         </div>
 
-        {/* Form Section */}
-        <div className="w-1/2">
-          <form className="" onSubmit={handleVote}>
-            {/* Render questions for voting */}
-            <div className="mb-8">
-              <h2 className="mb-4 text-xl font-bold">Poll Questions:</h2>
-              {survey.questions.map((question, index) => (
-                <div key={index} className="mb-4">
-                  <p className="text-lg font-bold">
-                    {question[`question${index + 1}`]}
-                  </p>
-                  <div className="flex space-x-4">
-                    <select
-                      className="px-4 py-2 bg-gray-300 rounded-md"
-                      value={selectedOptions[`question${index + 1}`] || ""}
-                      onChange={(e) =>
-                        setSelectedOptions({
-                          ...selectedOptions,
-                          [`question${index + 1}`]: e.target.value,
-                        })
-                      }
-                      required
-                    >
-                      <option value="" disabled>
-                        Select an option
-                      </option>
-                      <option value="Yes">Yes</option>
-                      <option value="No">No</option>
-                    </select>
+        {/* Render chart if isInclude is true */}
+        {isInclude ? (
+          <div className="w-1/2">
+            <h2 className="mb-4 text-xl font-bold">Survey Results Chart:</h2>
+            <ReactApexChart
+              options={chartOptions}
+              series={chartSeries}
+              type="bar"
+              height={350}
+            />
+          </div>
+        ) : (
+          <div className="w-1/2">
+            <form className="" onSubmit={handleVote}>
+              {/* Render questions for voting */}
+              <div className="mb-8">
+                <h2 className="mb-4 text-xl font-bold">Poll Questions:</h2>
+                {survey.questions.map((question, index) => (
+                  <div key={index} className="mb-4">
+                    <p className="text-lg font-bold">
+                      {question[`question${index + 1}`]}
+                    </p>
+                    <div className="flex space-x-4">
+                      <select
+                        className="px-4 py-2 bg-gray-300 rounded-md"
+                        value={selectedOptions[`question${index + 1}`] || ""}
+                        onChange={(e) =>
+                          setSelectedOptions({
+                            ...selectedOptions,
+                            [`question${index + 1}`]: e.target.value,
+                          })
+                        }
+                        required
+                      >
+                        <option value="" disabled>
+                          Select an option
+                        </option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                      </select>
+                    </div>
                   </div>
+                ))}
+              </div>
+
+              {/* Render input field for comments */}
+              {loggedUserData && loggedUserData.role === "pro-user" && (
+                <div className="mb-4">
+                  <h2 className="mb-2 text-xl font-bold">Add a Comment:</h2>
+                  <textarea
+                    required
+                    className="w-full p-2 border rounded"
+                    placeholder="Enter your comment here..."
+                    onChange={(e) => setComment(e.target.value)}
+                  ></textarea>
                 </div>
-              ))}
-            </div>
-
-            {/* Render input field for comments */}
-            {loggedUserData && loggedUserData.role === "pro-user" && (
-              <div className="mb-4">
-                <h2 className="mb-2 text-xl font-bold">Add a Comment:</h2>
-                <textarea
-                  required
-                  className="w-full p-2 border rounded"
-                  placeholder="Enter your comment here..."
-                  onChange={(e) => setComment(e.target.value)}
-                ></textarea>
-              </div>
-            )}
-            {/* check if the role of the user is user || pro-user */}
-            {loggedUserData?.role === "user" ||
-            loggedUserData?.role === "pro-user" ? (
-              <div className="mb-4">
-                <button
-                  type="submit"
-                  className="px-6 py-3 text-white bg-green-500 rounded-md"
-                >
-                  Submit Vote
-                </button>
-              </div>
-            ) : (
-              <div className="mb-4">
-                <button
-                  type="submit"
-                  disabled
-                  className="px-6 py-3 text-black bg-gray-400 rounded-md"
-                >
-                  Submit Vote
-                </button>
-              </div>
-            )}
-          </form>
-        </div>
-
-        {/* todo: after submitting vote you have to show a chart */}
+              )}
+              {/* check if the role of the user is user || pro-user */}
+              {loggedUserData?.role === "user" ||
+              loggedUserData?.role === "pro-user" ? (
+                <div className="mb-4">
+                  <button
+                    type="submit"
+                    className="px-6 py-3 text-white bg-green-500 rounded-md"
+                  >
+                    Submit Vote
+                  </button>
+                </div>
+              ) : (
+                <div className="mb-4">
+                  <button
+                    type="submit"
+                    disabled
+                    className="px-6 py-3 text-black bg-gray-400 rounded-md"
+                  >
+                    Submit Vote
+                  </button>
+                </div>
+              )}
+            </form>
+          </div>
+        )}
       </div>
 
       {/* Render feedback from pro-users */}
