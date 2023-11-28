@@ -1,5 +1,4 @@
-
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { useNavigate, useParams } from "react-router-dom";
 import { getSingleSurvey } from "../../../api/surveys";
@@ -10,20 +9,27 @@ import Loading from "../../../components/Shared/Loading";
 
 const SurveyDetails = () => {
   const { user } = useAuth();
-  const { loggedUserData, loadingOfLogged } = useRole();
   const navigate = useNavigate();
-
+  const { loggedUserData, loadingOfLogged } = useRole();
   const params = useParams();
+  const [submitVote, setSubmitVote] = useState("no");
+  const [selectedOptions, setSelectedOptions] = useState({});
+  const [comment, setComment] = useState(null);
+  const [isInclude, setIsInclude] = useState(false);
 
   const { isLoading, isError, data, error } = useQuery({
     queryKey: ["singleSurvey", useParams.id],
     queryFn: () => getSingleSurvey(params.id),
   });
-
-  const [submitVote, setSubmitVote] = useState("no");
-  const [selectedOptions, setSelectedOptions] = useState({});
-  const [comment, setComment] = useState(null);
-
+  useEffect(() => {
+    const response = data?.responses.map(
+      (response) => response.responseUserEmail
+    );
+    console.log("response email paici", response);
+    if (response?.includes(loggedUserData?.email)) {
+      setIsInclude(true);
+    }
+  }, [data, loggedUserData]);
   const handleVote = async (e) => {
     e.preventDefault();
 
@@ -31,33 +37,36 @@ const SurveyDetails = () => {
       navigate("/login");
     }
 
-    // Implement logic to submit the vote based on selectedOptions
-    if (comment) {
-      console.log("Feedback: ", [
-        {
-          name: user.displayName,
-          proUserEmail: user.email,
-          proUserImage: user.photoURL,
-          comment: comment,
-        },
-      ]);
-    }
-    console.log("answers :", selectedOptions);
+    if (user) {
+      // Implement logic to submit the vote based on selectedOptions
+      if (comment) {
+        console.log("Feedback: ", [
+          {
+            name: user?.displayName || loggedUserData?.name,
+            proUserEmail: user?.email,
+            proUserImage: user?.photoURL,
+            comment: comment,
+          },
+        ]);
+      }
+      console.log("answers :", selectedOptions);
 
-    // Assuming you have an async function to submit the vote
-    try {
-      // Replace the following line with actual logic to submit the vote
-      // await submitVote(selectedOptions, comment);
-      setSubmitVote("yes");
-    } catch (error) {
-      console.error("Error submitting vote:", error);
-      // Handle error if vote submission fails
-      // You might want to reset submitVote to "no" here
+      // Assuming you have an async function to submit the vote
+      try {
+        // Replace the following line with actual logic to submit the vote
+        // await submitVote(selectedOptions, comment);
+        setSubmitVote("yes");
+      } catch (error) {
+        console.error("Error submitting vote:", error);
+        // Handle error if vote submission fails
+        // You might want to reset submitVote to "no" here
+      }
     }
+    //   todo:call refetch after submit the data to backend
   };
-console.log("paici", submitVote);
+  console.log("paici", submitVote);
   if (isLoading || loadingOfLogged) {
-    return <Loading></Loading>
+    return <Loading></Loading>;
   }
 
   if (isError) {
@@ -66,6 +75,7 @@ console.log("paici", submitVote);
 
   const survey = data;
 
+  console.log("isinclude", isInclude);
   return (
     <Container>
       <div className="flex">
@@ -138,18 +148,32 @@ console.log("paici", submitVote);
                 ></textarea>
               </div>
             )}
-
-            {/* Render vote and comment buttons */}
-            <div className="mb-4">
-              <button
-                type="submit"
-                className="px-6 py-3 text-white bg-green-500 rounded-md"
-              >
-                Submit Vote
-              </button>
-            </div>
+            {/* check if the role of the user is user || pro-user */}
+            {loggedUserData?.role === "user" ||
+            loggedUserData?.role === "pro-user" ? (
+              <div className="mb-4">
+                <button
+                  type="submit"
+                  className="px-6 py-3 text-white bg-green-500 rounded-md"
+                >
+                  Submit Vote
+                </button>
+              </div>
+            ) : (
+              <div className="mb-4">
+                <button
+                  type="submit"
+                  disabled
+                  className="px-6 py-3 text-black bg-gray-400 rounded-md"
+                >
+                  Submit Vote
+                </button>
+              </div>
+            )}
           </form>
         </div>
+
+        {/* todo: after submitting vote you have to show a chart */}
       </div>
 
       {/* Render feedback from pro-users */}
