@@ -22,10 +22,10 @@ const CheckoutForm = ({ paymentInfo, closeModal }) => {
   // Create Payment Intent
   useEffect(() => {
     // create payment intent
-    if (paymentInfo.price > 0) {
+    if (paymentInfo?.price > 0) {
       createPaymentIntent({ price: paymentInfo.price }).then((data) => {
         console.log(data);
-        setClientSecret(data.clientSecret);
+        setClientSecret(data?.clientSecret);
       });
     }
   }, [paymentInfo]);
@@ -77,18 +77,18 @@ const CheckoutForm = ({ paymentInfo, closeModal }) => {
 
     console.log("payment intent", paymentIntent);
 
-    if (paymentIntent.status === "succeeded") {
+    if (paymentIntent?.status === "succeeded") {
       try {
         const proPaymentInfo = {
           ...paymentInfo,
-          transactionId: paymentIntent.id,
+          transactionId: paymentIntent?.id,
           date: new Date(),
         };
         // save payment information to the server
         await savePaymentInfo(proPaymentInfo);
         // update room status in db
         
-        await updateUserStatus(paymentInfo.proUserEmail, "pro-user");
+        await updateUserStatus(paymentInfo?.proUserEmail, "pro-user");
         const text = `Booking successful ${paymentIntent.id}`;
         toast.success(text);
         navigate("/");

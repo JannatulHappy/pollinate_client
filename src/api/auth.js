@@ -20,6 +20,14 @@ export const getUserRole = async (email) => {
   const { data } = await axiosSecure(`/users/${email}`);
   return data;
 };
+export const becomeSurveyor = async (email) => {
+  const currentUser = {
+    email,
+    status: "Requested",
+  };
+  const { data } = await axiosSecure.put(`/users/${email}`, currentUser);
+  return data;
+};
 export const getToken = async (email) => {
   const { data } = await axiosSecure.post("/jwt", email);
   console.log("token received from server ...");

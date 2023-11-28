@@ -6,22 +6,42 @@ import avatarImg from "../../../assets/placeholder.jpg";
 import SurveyorModal from "../../Modal/SurveyorModal";
 
 import toast from "react-hot-toast";
+import useRole from "../../../hooks/useRole";
+import { becomeSurveyor } from "../../../api/auth";
 // Todo: host api --role
 const MenuDropdown = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-
+  const { loggedUserData, loadingOfLogged } = useRole();
   const { user, logOut } = useAuth();
 
   const closeModal = () => {
     setIsModalOpen(false);
   };
 
+  // const modalHandler = async () => {
+  //   // request to be host
+  //   console.log("requset");
+  //   try {
+  //     toast.success("Success, Please wait for admin confirmation");
+  //   } catch (e) {
+  //     console.log(e.message);
+  //     toast.error(e.message);
+  //   } finally {
+  //     setIsModalOpen(false);
+  //   }
+  // };
   const modalHandler = async () => {
     // request to be host
     console.log("requset");
     try {
-      toast.success("Success, Please wait for admin confirmation");
+      const res = await becomeSurveyor(user?.email);
+      console.log(res);
+      if (res.modifiedCount > 0) {
+        toast.success("Success, Please wait for admin confirmation");
+      } else {
+        toast.success("Please, wait for admin approval 🤜");
+      }
     } catch (e) {
       console.log(e.message);
       toast.error(e.message);
@@ -33,14 +53,17 @@ const MenuDropdown = () => {
   return (
     <div className="relative">
       <div className="flex flex-row items-center gap-3">
-        {/* Become A Host btn */}
+        {/* Become A Surveyor btn */}
         <div className="hidden md:block">
-          {/* {(!user || !role || role == 'user') && 
-          <button
-            onClick={() => setIsModalOpen(true)} className='px-4 py-3 text-sm font-semibold transition rounded-full cursor-pointer disabled:cursor-not-allowed hover:bg-neutral-100'>
-            Host your home
-          </button>
-          } */}
+          {(loggedUserData?.role == "user" ||
+            loggedUserData?.role == "pro-user") && (
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className="px-4 py-3 text-sm font-semibold transition rounded-full cursor-pointer disabled:cursor-not-allowed bg-neutral-200 hover:bg-neutral-400 "
+            >
+              Add Survey
+            </button>
+          )}
 
           <Link to="/payment">
             <button className="px-4 py-3 text-sm font-semibold transition rounded-full cursor-pointer bg-neutral-200 hover:bg-neutral-400">
@@ -59,7 +82,7 @@ const MenuDropdown = () => {
           </Link>
           <Link to="/privacy-policy">
             <button className="px-4 py-3 text-sm font-semibold transition rounded-full cursor-pointer bg-neutral-200 hover:bg-neutral-400">
-             Privacy & Policy
+              Privacy & Policy
             </button>
           </Link>
           <Link to="contact-us">
@@ -67,12 +90,12 @@ const MenuDropdown = () => {
               Contact Us
             </button>
           </Link>
-          <button
+          {/* <button
             onClick={() => setIsModalOpen(true)}
             className="px-4 py-3 text-sm font-semibold transition rounded-full cursor-pointer disabled:cursor-not-allowed bg-neutral-200 hover:bg-neutral-400 "
           >
             Add Survey
-          </button>
+          </button> */}
         </div>
         {/* Dropdown btn */}
         <div

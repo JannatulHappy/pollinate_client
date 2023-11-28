@@ -45,18 +45,18 @@ const PaymentModal = ({ closeModal, isOpen, paymentInfo }) => {
 
                 <div className="mt-2">
                   <p className="text-sm text-gray-500">
-                    Name: {paymentInfo.proUserName}
+                    Name: {paymentInfo?.proUserName}
                   </p>
                 </div>
                 <div className="mt-2">
                   <p className="text-sm text-gray-500">
-                    Name: {paymentInfo.proUserEmail}
+                    Name: {paymentInfo?.proUserEmail}
                   </p>
                 </div>
 
                 <div className="mt-2">
                   <p className="text-sm text-gray-500">
-                    Price: $ {paymentInfo.price}
+                    Price: $ {paymentInfo?.price}
                   </p>
                 </div>
                 <hr className="mt-8 " />

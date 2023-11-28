@@ -3,8 +3,8 @@ import useAuth from "../../hooks/useAuth";
 import PaymentModal from "../../components/Modal/PaymentModal";
 
 const Payment = () => {
-    const { user } = useAuth();
-    console.log(user,"user payment")
+  const { user } = useAuth();
+ 
   const [isOpen, setIsOpen] = useState(false);
   const closeModal = () => {
     setIsOpen(false);
@@ -25,7 +25,7 @@ const Payment = () => {
         <p className="w-40 border-b-8 border-green-200"></p>
       </div>
 
-      <div className="grid grid-cols-1  max-w-sm mx-auto">
+      <div className="grid max-w-sm grid-cols-1 mx-auto">
         <div className="w-full max-w-sm p-4 mt-20 shadow bg-green-50 rounded-xl sm:p-8">
           <h5 className="mb-4 text-lg font-bold">Pro User</h5>
 
@@ -126,14 +126,14 @@ const Payment = () => {
           </ul>
 
           <div onClick={() => setIsOpen(true)}>
-            <button className="py-4 mt-5 text-lg rounded-lg px-14 lg:py-6 bg-green-200">
+            <button className="py-4 mt-5 text-lg bg-green-200 rounded-lg px-14 lg:py-6">
               BECAME PRO USER
             </button>
           </div>
           <PaymentModal
             closeModal={closeModal}
             isOpen={isOpen}
-           paymentInfo={paymentInfo}
+            paymentInfo={paymentInfo}
           ></PaymentModal>
         </div>
       </div>
