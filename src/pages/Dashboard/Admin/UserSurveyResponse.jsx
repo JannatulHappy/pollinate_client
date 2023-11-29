@@ -1,11 +1,19 @@
-import React from 'react';
+import useSurveys from "../../../hooks/useSurveys";
+
 
 const UserSurveyResponse = () => {
-    return (
-        <div>
-            response of survey admin
-        </div>
-    ); 
+  const { user } = useAuth();
+  const { data: surveys, refetch, isLoading } = useSurveys();
+
+ 
+
+  return (
+    <>
+      show a table and chart here
+    </>
+  );
 };
 
 export default UserSurveyResponse;
+
+
