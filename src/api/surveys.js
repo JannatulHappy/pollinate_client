@@ -23,3 +23,10 @@ export const updateSurveysStatus = async (id,updatedData) => {
   );
   return data;
 };
+
+
+// add survey from surveyor dashboard
+export const addSurvey = async (surveyData) => {
+  const { data } = await axiosSecure.post(`/survey`, surveyData);
+  return data;
+};
