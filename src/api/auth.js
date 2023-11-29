@@ -42,7 +42,7 @@ export const becomeSurveyor = async (email) => {
   return data;
 };
 export const getToken = async (email) => {
-  const { data } = await axiosSecure.post("/jwt", email);
+  const { data } = await axiosSecure.post("/jwt", {email});
   console.log("token received from server ...");
   return data;
 };

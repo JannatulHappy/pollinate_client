@@ -55,13 +55,14 @@ const MenuDropdown = () => {
       <div className="flex flex-row items-center gap-3">
         {/* Become A Surveyor btn */}
         <div className="hidden md:block">
-          {(loggedUserData?.role == "user" ||
+          {(!user ||
+            loggedUserData?.role == "user" ||
             loggedUserData?.role == "pro-user") && (
             <button
               onClick={() => setIsModalOpen(true)}
               className="px-4 py-3 text-sm font-semibold transition rounded-full cursor-pointer disabled:cursor-not-allowed bg-neutral-200 hover:bg-neutral-400 "
             >
-              Add Survey
+              Became Surveyor
             </button>
           )}
 
@@ -166,6 +167,7 @@ const MenuDropdown = () => {
         modalHandler={modalHandler}
         isOpen={isModalOpen}
         closeModal={closeModal}
+        user={user}
       ></SurveyorModal>
     </div>
   );
