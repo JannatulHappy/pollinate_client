@@ -14,6 +14,11 @@ export const updateSurveys = async (updatedData,id) => {
   const { data } = await axiosSecure.put(`/surveys/update/${id}`, updatedData);
   return data;
 };
+// update  surveys after vote 
+export const updateSurveyorList = async (id,updatedData,) => {
+  const { data } = await axiosSecure.put(`/surveys/surveyorList/${id}`, updatedData);
+  return data;
+};
 // update survey after admin publish of unpublish it from pending
 // update  surveys after vote  /surveys/status/
 export const updateSurveysStatus = async (id,updatedData) => {

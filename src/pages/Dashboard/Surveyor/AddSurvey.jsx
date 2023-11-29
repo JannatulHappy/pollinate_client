@@ -46,20 +46,7 @@ const AddSurvey = () => {
       responses: [],
       };
       console.log(surveyData)
-    // const surveyData = {
-    //   location,
-    //   category,
-    //   title,
-    //   to,
-    //   from,
-    //   price,
-    //   guests,
-    //   bathrooms,
-    //   bedrooms,
-    //   host,
-    //   description,
-    //   image: image_url?.data?.display_url,
-    // };
+   
 
     try {
       const data = await addSurvey(surveyData);
