@@ -23,7 +23,11 @@ export const updateSurveysStatus = async (id,updatedData) => {
   );
   return data;
 };
-
+// get specific surveyor survey/ surveys
+export const getSurveyorSurvey = async (email) => {
+  const { data } = await axiosSecure(`/surveyor-survey/${email}`);
+  return data;
+};
 
 // add survey from surveyor dashboard
 export const addSurvey = async (surveyData) => {
