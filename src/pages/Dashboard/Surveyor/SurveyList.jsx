@@ -3,6 +3,7 @@ import { Dialog, Transition } from "@headlessui/react";
 import { Fragment } from "react";
 import useAuth from "../../../hooks/useAuth";
 import { getSurveyorSurvey } from "../../../api/surveys";
+import SurveyModal from "../../../components/Modal/SurveyModal";
 
 const SurveyList = () => {
   const { user } = useAuth();
@@ -10,22 +11,35 @@ const SurveyList = () => {
   const [surveys, setSurveys] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
   const [selectedSurvey, setSelectedSurvey] = useState(null);
-
+  const [isAdminFeedbackOpen, setIsAdminFeedbackOpen] = useState(false);
   useEffect(() => {
     getSurveyorSurvey(user?.email).then((data) => {
       setSurveys(data);
     });
   }, [user]);
 
-  function closeModal() {
-    setIsOpen(false);
-  }
+//   function closeModal() {
+//     setIsOpen(false);
+//   }
 
-  function openModal(survey) {
-    setSelectedSurvey(survey);
-    setIsOpen(true);
-  }
+//   function openModal(survey) {
+//     setSelectedSurvey(survey);
+//     setIsOpen(true);
+//   }
+ function closeModal() {
+   setIsOpen(false);
+   setIsAdminFeedbackOpen(false);
+ }
 
+ function openModal(survey) {
+   setSelectedSurvey(survey);
+   setIsOpen(true);
+ }
+
+ function openAdminFeedbackModal(survey) {
+   setSelectedSurvey(survey);
+   setIsAdminFeedbackOpen(true);
+ }
   return (
     <>
       <div className="container px-4 mx-auto sm:px-8">
@@ -65,6 +79,7 @@ const SurveyList = () => {
                     >
                       Users Feedback
                     </th>
+
                     <th
                       scope="col"
                       className="px-5 py-3 text-sm font-normal text-left text-gray-800 uppercase bg-white border-b border-gray-200"
@@ -124,19 +139,56 @@ const SurveyList = () => {
                         </span>
                       </td>
                       <td>
-                        {survey.totalVote > 0 && (
+                        {survey.totalVote > 0 ? (
                           <div className="mb-4">
                             <button
                               type="button"
                               onClick={() => openModal(survey)}
-                              className="px-4 py-2 text-sm font-medium text-white rounded-md bg-black/20 hover:bg-black/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75"
+                              className="px-4 py-2 text-sm font-medium text-white rounded-md bg-black/40 hover:bg-black/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75"
                             >
                               See Feedback
                             </button>
                           </div>
+                        ) : (
+                          <p className="relative inline-block px-3 py-1 text-sm font-semibold leading-tight text-green-900 ">
+                            Not Applicable
+                          </p>
+                        )}
+                      </td>
+                      <td>
+                        {survey?.adminFeedback ? (
+                          <div className="mb-4">
+                            <button
+                              type="button"
+                              onClick={() => openAdminFeedbackModal(survey)}
+                              className="px-4 py-2 text-sm font-medium text-white rounded-md bg-black/40 hover:bg-black/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75"
+                            >
+                              See Admin Feedback
+                            </button>
+                          </div>
+                        ) : (
+                          <p className="relative inline-block px-3 py-1 text-sm font-semibold leading-tight text-green-900 ">
+                            Not Applicable
+                          </p>
                         )}
                       </td>
 
+                      {/* <td>
+                        {survey?.adminFeedback ? (
+                          <div className="mb-4">
+                            <button
+                              type="button"
+                              className="px-4 py-2 text-sm font-medium text-white rounded-md bg-black/40 hover:bg-black/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75"
+                            >
+                              See Admin Feedback
+                            </button>
+                          </div>
+                        ) : (
+                          <p className="relative inline-block px-3 py-1 text-sm font-semibold leading-tight text-green-900 ">
+                            Not Applicable
+                          </p>
+                        )}
+                      </td> */}
                       <td className="px-5 py-5 text-sm bg-white border-b border-gray-200">
                         <span className="relative inline-block px-3 py-1 font-semibold leading-tight text-green-900 cursor-pointer">
                           <span
@@ -154,9 +206,27 @@ const SurveyList = () => {
           </div>
         </div>
       </div>
+      {/* Modal for User Feedback */}
+      <SurveyModal
+        isOpen={isOpen}
+        closeModal={closeModal}
+        selectedSurvey={selectedSurvey}
+      />
 
+      {/* Modal for Admin Feedback */}
+      <SurveyModal
+        isOpen={isAdminFeedbackOpen}
+        closeModal={closeModal}
+        selectedSurvey={selectedSurvey}
+        isAdminFeedback
+      />
       {/* Modal outside the table row */}
-      <Transition appear show={isOpen} as={Fragment}>
+      {/* <SurveyModal
+        isOpen={isOpen}
+        closeModal={closeModal}
+        selectedSurvey={selectedSurvey}
+      /> */}
+      {/* <Transition appear show={isOpen} as={Fragment}>
         <Dialog
           as="div"
           className="relative z-10"
@@ -242,7 +312,7 @@ const SurveyList = () => {
             </div>
           </div>
         </Dialog>
-      </Transition>
+      </Transition> */}
     </>
   );
 };
