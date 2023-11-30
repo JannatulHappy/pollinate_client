@@ -6,7 +6,7 @@ const SurveyCard = ({ survey }) => {
     return moment(timestamp).format("MMMM Do YYYY");
   };
   return (
-    <div className="m-2 overflow-hidden bg-white rounded shadow-lg">
+    <div className="m-2 overflow-hidden bg-white rounded shadow-lg ">
       {/* Survey Image (if applicable) */}
       <img className="object-cover w-full h-64" src={survey.image} />
 
@@ -15,8 +15,10 @@ const SurveyCard = ({ survey }) => {
 
         <div className="mb-2 text-xl font-bold">{survey.title}</div>
 
-        {/* Survey Description */}
-        <p className="text-base text-gray-700">{survey.description}</p>
+        <div className="h-12">
+          {/* Survey Description */}
+          <p className="text-base text-gray-700">{survey.description}</p>
+        </div>
 
         {/* Survey Details */}
         <div className="flex items-center justify-between mt-4">
@@ -45,11 +47,13 @@ const SurveyCard = ({ survey }) => {
       {/* Survey Creator Information */}
       <div className="flex items-center justify-between px-6 py-4 border-t border-gray-200">
         <span className="mr-2">
-          <i className="text-red-500 far fa-thumbs-down"></i> Created: {" "}
+          <i className="text-red-500 far fa-thumbs-down"></i> Created:{" "}
           {formatDate(survey.timestamp)}
         </span>
         <Link to={`/surveys/${survey._id}`}>
-          <button className="px-4 py-3 text-lg font-medium bg-green-100 rounded-lg hover:bg-green-200">Participate In Survey</button>
+          <button className="px-4 py-3 text-lg font-medium bg-green-100 rounded-lg hover:bg-green-200">
+            Participate In Survey
+          </button>
         </Link>
       </div>
     </div>

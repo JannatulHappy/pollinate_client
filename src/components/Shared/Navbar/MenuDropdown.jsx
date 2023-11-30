@@ -82,7 +82,7 @@ const MenuDropdown = () => {
         </div>
       </div>
       {isOpen && (
-        <div className="absolute rounded-xl shadow-md w-[40vw] md:w-[30vw] xl:w-[10vw] bg-white overflow-hidden right-0 top-12 text-sm">
+        <div className="absolute rounded-xl mt-3 shadow-md w-[40vw] md:w-[30vw] xl:w-[11vw] bg-white overflow-hidden right-0 top-12 text-sm">
           <div className="flex flex-col cursor-pointer">
             <Link
               to="/"

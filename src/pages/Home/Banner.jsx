@@ -1,5 +1,7 @@
 // HeroSection.js
 
+import { Link } from "react-router-dom";
+
 const Banner = () => {
   return (
     <div className="relative flex items-center h-screen bg-green-900 bg-center bg-cover">
@@ -12,12 +14,12 @@ const Banner = () => {
           Unleash the power of surveys to gather valuable insights, engage your
           audience, and make informed decisions.
         </p>
-        <a
-          href="#explore"
+        <Link
+          to="/surveys"
           className="px-8 py-3 text-lg font-bold text-black transition duration-300 transform bg-white rounded-lg hover:bg-black hover:text-white hover:scale-105"
         >
           Explore Now
-        </a>
+        </Link>
       </div>
     </div>
   );

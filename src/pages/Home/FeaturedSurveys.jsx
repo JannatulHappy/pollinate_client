@@ -13,7 +13,7 @@ const FeaturedSurveys = () => {
       ?.filter((survey) => survey.surveyStatus === "published")
       .sort((a, b) => b.totalVote - a.totalVote) || [];
 
-  const top3Surveys = sortedSurveys.slice(0, 3);
+  const top3Surveys = sortedSurveys.slice(0, 6);
 
   return (
     <div className="my-10">
@@ -23,7 +23,7 @@ const FeaturedSurveys = () => {
           subtitle={"Most Voted Survey"}
           center={"true"}
         ></Heading>
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
           {/* Render the top 3 surveys */}
           {top3Surveys.map((survey, index) => (
             <div key={index}>
