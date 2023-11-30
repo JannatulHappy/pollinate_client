@@ -37,7 +37,7 @@ const SurVeyorModal = ({ modalHandler, closeModal, isOpen, user }) => {
                 <div className="mt-2">
                   <p className="text-sm text-gray-500">
                     {!user ? (
-                      <p className="pt-3 font-semibold text-center">"Please Login Before Became a Surveyor"</p>
+                      <p className="pt-3 text-lg font-bold text-center">"Please Login Before Became a Surveyor"</p>
                     ) : (
                       "Please read all the terms & conditions before becoming a Surveyor."
                     )}

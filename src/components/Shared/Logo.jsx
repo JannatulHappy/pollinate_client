@@ -7,7 +7,7 @@ const Logo = () => {
     <Link to="/">
       <p className="flex items-center justify-center gap-1 ">
         {" "}
-        <RiSurveyFill  /> <span className='text-2xl text-black '>POLLINATE</span>
+        <RiSurveyFill size={25} className='text-green-800' /> <span className='text-2xl font-semibold text-green-800 '>POLLINATE</span>
       </p>
     </Link>
   );

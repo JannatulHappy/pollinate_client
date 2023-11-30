@@ -4,36 +4,20 @@ import { Link } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 import avatarImg from "../../../assets/placeholder.jpg";
 import SurveyorModal from "../../Modal/SurveyorModal";
-
 import toast from "react-hot-toast";
 import useRole from "../../../hooks/useRole";
 import { becomeSurveyor } from "../../../api/auth";
-// Todo: host api --role
 const MenuDropdown = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { loggedUserData, loadingOfLogged } = useRole();
   const { user, logOut } = useAuth();
-
   const closeModal = () => {
     setIsModalOpen(false);
   };
 
-  // const modalHandler = async () => {
-  //   // request to be host
-  //   console.log("requset");
-  //   try {
-  //     toast.success("Success, Please wait for admin confirmation");
-  //   } catch (e) {
-  //     console.log(e.message);
-  //     toast.error(e.message);
-  //   } finally {
-  //     setIsModalOpen(false);
-  //   }
-  // };
   const modalHandler = async () => {
-    // request to be host
-    console.log("requset");
+    // request to be surveyor
     try {
       const res = await becomeSurveyor(user?.email);
       console.log(res);
@@ -60,43 +44,23 @@ const MenuDropdown = () => {
             loggedUserData?.role == "pro-user") && (
             <button
               onClick={() => setIsModalOpen(true)}
-              className="px-4 py-3 text-sm font-semibold transition rounded-full cursor-pointer disabled:cursor-not-allowed bg-neutral-200 hover:bg-neutral-400 "
+              className="px-4 py-3 text-base font-semibold text-green-900 transition bg-green-100 first-line:cursor-pointer rounded-xl hover:bg-green-200 "
             >
               Became Surveyor
             </button>
           )}
 
           <Link to="/payment">
-            <button className="px-4 py-3 text-sm font-semibold transition rounded-full cursor-pointer bg-neutral-200 hover:bg-neutral-400">
+            <button className="px-4 py-3 mx-3 text-base font-semibold text-green-900 transition bg-green-100 first-line:cursor-pointer rounded-xl hover:bg-green-200">
               Pro
             </button>
           </Link>
-          <Link to="about-us">
-            <button className="px-4 py-3 text-sm font-semibold transition rounded-full cursor-pointer bg-neutral-200 hover:bg-neutral-400">
-              About Us
-            </button>
-          </Link>
+
           <Link to="/surveys">
-            <button className="px-4 py-3 text-sm font-semibold transition rounded-full cursor-pointer bg-neutral-200 hover:bg-neutral-400">
+            <button className="hidden px-4 py-3 text-base font-semibold text-green-900 transition bg-green-100 first-line:cursor-pointer rounded-xl hover:bg-green-200 md:inline-block">
               Surveys
             </button>
           </Link>
-          <Link to="/privacy-policy">
-            <button className="px-4 py-3 text-sm font-semibold transition rounded-full cursor-pointer bg-neutral-200 hover:bg-neutral-400">
-              Privacy & Policy
-            </button>
-          </Link>
-          <Link to="contact-us">
-            <button className="px-4 py-3 text-sm font-semibold transition rounded-full cursor-pointer bg-neutral-200 hover:bg-neutral-400">
-              Contact Us
-            </button>
-          </Link>
-          {/* <button
-            onClick={() => setIsModalOpen(true)}
-            className="px-4 py-3 text-sm font-semibold transition rounded-full cursor-pointer disabled:cursor-not-allowed bg-neutral-200 hover:bg-neutral-400 "
-          >
-            Add Survey
-          </button> */}
         </div>
         {/* Dropdown btn */}
         <div
@@ -118,7 +82,7 @@ const MenuDropdown = () => {
         </div>
       </div>
       {isOpen && (
-        <div className="absolute rounded-xl shadow-md w-[40vw] md:w-[10vw] bg-white overflow-hidden right-0 top-12 text-sm">
+        <div className="absolute rounded-xl shadow-md w-[40vw] md:w-[30vw] xl:w-[10vw] bg-white overflow-hidden right-0 top-12 text-sm">
           <div className="flex flex-col cursor-pointer">
             <Link
               to="/"
@@ -126,7 +90,54 @@ const MenuDropdown = () => {
             >
               Home
             </Link>
+            <div className="flex flex-col md:hidden">
+              {(!user ||
+                loggedUserData?.role == "user" ||
+                loggedUserData?.role == "pro-user") && (
+                <button
+                  onClick={() => setIsModalOpen(true)}
+                  className="px-4 py-3 font-bold transition bg-green-100 text-lg-green-900 first-line:cursor-pointer rounded-xl hover:bg-green-200 "
+                >
+                  Became Surveyor
+                </button>
+              )}
 
+              <Link to="/payment">
+                <button className="px-8 py-3 mt-3 font-bold transition bg-green-100 text-lg-green-900 first-line:cursor-pointer rounded-xl hover:bg-green-200 ">
+                  Became Pro
+                </button>
+              </Link>
+
+              <Link to="/surveys">
+                <button className="hidden px-4 py-3 text-base font-semibold text-green-900 transition bg-green-100 first-line:cursor-pointer rounded-xl hover:bg-green-200 md:inline-block">
+                  Surveys
+                </button>
+              </Link>
+            </div>
+            <Link to="/surveys">
+              <button className="px-4 py-3 text-sm font-semibold transition rounded-full cursor-pointer ">
+                Surveys
+              </button>
+            </Link>
+            <Link to="about-us">
+              <button className="px-4 py-3 text-sm font-semibold transition rounded-full cursor-pointer ">
+                About Us
+              </button>
+            </Link>
+            <hr />
+
+            <Link to="/privacy-policy">
+              <button className="px-4 py-3 text-sm font-semibold transition rounded-full cursor-pointer ">
+                Privacy & Policy
+              </button>
+            </Link>
+            <hr />
+            <Link to="contact-us">
+              <button className="px-4 py-3 text-sm font-semibold transition rounded-full cursor-pointer ">
+                Contact Us
+              </button>
+            </Link>
+            <hr />
             {user ? (
               <>
                 <Link
@@ -137,7 +148,7 @@ const MenuDropdown = () => {
                 </Link>
                 <button
                   onClick={logOut}
-                  className="px-4 py-3 font-semibold transition cursor-pointer hover:bg-neutral-100"
+                  className="px-4 py-3 text-base font-bold text-green-900 transition bg-green-100 hover:bg-green-200"
                 >
                   Logout
                 </button>
@@ -146,14 +157,14 @@ const MenuDropdown = () => {
               <>
                 <Link
                   to="/login"
-                  className="px-4 py-3 font-semibold transition hover:bg-neutral-100"
+                  className="px-4 py-3 font-bold text-green-900 transition hover:bg-green-50"
                 >
                   Login
                 </Link>
-
+                <hr />
                 <Link
                   to="/signup"
-                  className="px-4 py-3 font-semibold transition hover:bg-neutral-100"
+                  className="px-4 py-3 font-bold text-green-900 transition hover:bg-green-50"
                 >
                   Sign Up
                 </Link>
