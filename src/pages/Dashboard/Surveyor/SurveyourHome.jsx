@@ -4,7 +4,7 @@ import Chart from "react-apexcharts";
 import useSurveys from "../../../hooks/useSurveys";
 import Loading from "../../../components/Shared/Loading";
 
-const SurveyResponse = () => {
+const SurveyorResponse = () => {
   const { data: surveys, refetch, isLoading } = useSurveys();
 
   // Extract data for the chart
@@ -20,9 +20,9 @@ const SurveyResponse = () => {
   const chartOptions = {
     labels: chartData?.map((data) => data.x),
   };
- if (isLoading ) {
-   return <Loading></Loading>;
- }
+  if (isLoading) {
+    return <Loading></Loading>;
+  }
   return (
     <div className="container p-8 mx-auto">
       <h1 className="mb-8 text-3xl font-bold">Survey Responses</h1>
@@ -81,4 +81,4 @@ const SurveyResponse = () => {
   );
 };
 
-export default SurveyResponse;
+export default SurveyorResponse;

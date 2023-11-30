@@ -142,10 +142,11 @@ const MenuDropdown = () => {
               <>
                 <Link
                   to="/dashboard"
-                  className="px-4 py-3 font-semibold transition hover:bg-neutral-100"
+                  className="px-4 py-3 text-base font-bold text-green-900 transition hover:bg-green-100 "
                 >
                   Dashboard
                 </Link>
+                <hr />
                 <button
                   onClick={logOut}
                   className="px-4 py-3 text-base font-bold text-green-900 transition bg-green-100 hover:bg-green-200"

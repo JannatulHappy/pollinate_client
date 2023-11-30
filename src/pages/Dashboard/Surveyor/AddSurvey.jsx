@@ -6,6 +6,7 @@ import { addSurvey } from "../../../api/surveys";
 import useAuth from "../../../hooks/useAuth";
 import { imageUpload } from "../../../api/utils";
 import AddSurveyForm from "../../../components/Form/AddSurveyForm";
+import Loading from "../../../components/Shared/Loading";
 
 const AddSurvey = () => {
   const { user } = useAuth();
@@ -68,7 +69,9 @@ const AddSurvey = () => {
     console.log(image);
     setUploadButtonText(image?.name);
   };
-
+ if (isLoading ) {
+   return <Loading></Loading>;
+ }
   return (
     <>
       {/* form */}

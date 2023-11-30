@@ -23,8 +23,8 @@ const UserSurveyResponse = () => {
   return (
     <div className="container p-8 mx-auto">
       <h1 className="mb-8 text-3xl font-bold">Survey Responses</h1>
-
-      {/* Table */}
+in admin 
+      {/* Tainble */}
       <table className="min-w-full bg-white border">
         <thead>
           <tr>
