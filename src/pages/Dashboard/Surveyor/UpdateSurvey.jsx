@@ -8,9 +8,9 @@ import { imageUpload } from "../../../api/utils";
 import { updateSurveyorList } from "../../../api/surveys";
 import toast from "react-hot-toast";
 
-const UpdateSurvey = ({id,refetch}) => {
-    console.log(id)
-    
+const UpdateSurvey = ({ id, survey, refetch }) => {
+  // console.log(id,survey);
+
   const [loading, setLoading] = useState(false);
   const [uploadButtonText, setUploadButtonText] = useState("Upload image");
   const navigate = useNavigate();
@@ -33,9 +33,9 @@ const UpdateSurvey = ({id,refetch}) => {
     const image_url = await imageUpload(image);
 
     const surveyData = {
-      category: form?.category?.value || "category",
-      title: form.title.value,
-      description: form.description.value,
+      category: form?.category?.value,
+      title: form.title.value ,
+      description: form.description.value ,
 
       image: image_url?.data?.display_url,
     };
@@ -46,8 +46,8 @@ const UpdateSurvey = ({id,refetch}) => {
       const data = await updateSurveyorList(id, surveyData);
       console.log(data);
       setUploadButtonText("Uploaded!");
-        toast.success("Survey Updated!");
-       refetch()
+      toast.success("Survey Updated!");
+      refetch();
       navigate("/dashboard/survey-list");
     } catch (err) {
       console.log(err);
@@ -55,7 +55,7 @@ const UpdateSurvey = ({id,refetch}) => {
     } finally {
       setLoading(false);
     }
- 
+
     console.log(surveyData);
 
     setIsModalOpen(false);
@@ -188,10 +188,10 @@ const UpdateSurvey = ({id,refetch}) => {
                         <input
                           className="w-full px-4 py-3 text-gray-800 border border-green-300 rounded-md focus:outline-green-500 "
                           name="title"
+                          required
                           id="title"
                           type="text"
                           placeholder="Title"
-                          required
                         />
                       </div>
                       <div className="space-y-1 text-sm">
@@ -204,6 +204,7 @@ const UpdateSurvey = ({id,refetch}) => {
 
                         <textarea
                           id="description"
+                          required
                           className="block w-full h-32 px-4 py-3 text-gray-800 border border-green-300 rounded-md focus:green-300 focus:outline-green-500 "
                           name="description"
                         ></textarea>

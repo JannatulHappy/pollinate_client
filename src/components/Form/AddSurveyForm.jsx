@@ -146,7 +146,7 @@ const AddSurveyForm = ({
               </label>
 
               <textarea
-                id="description"
+                id="description"required
                 className="block w-full h-32 px-4 py-3 text-gray-800 border border-green-300 rounded-md focus:green-300 focus:outline-green-500 "
                 name="description"
               ></textarea>

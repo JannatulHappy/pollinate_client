@@ -175,9 +175,9 @@ const SurveyList = () => {
 
                       <td>
                         <UpdateSurvey
-                         
-                                  id={survey?._id}
-                                  refetch={refetch}
+                          id={survey?._id}
+                          survey={survey}
+                          refetch={refetch}
                         ></UpdateSurvey>
                       </td>
                     </tr>

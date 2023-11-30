@@ -1,8 +1,12 @@
 import axios from "axios";
 import { clearCookie } from "./auth";
 
+// const axiosSecure = axios.create({
+//   baseURL: "http://localhost:9000",
+//   withCredentials: true,
+// });
 const axiosSecure = axios.create({
-  baseURL: "http://localhost:9000",
+  baseURL: "https://pollinate-server.vercel.app",
   withCredentials: true,
 });
 

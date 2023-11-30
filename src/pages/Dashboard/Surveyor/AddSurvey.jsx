@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { addSurvey } from "../../../api/surveys";
 import useAuth from "../../../hooks/useAuth";
 import { imageUpload } from "../../../api/utils";
-import AddSurveyForm from "../../../components/Form/AddRoomForm";
+import AddSurveyForm from "../../../components/Form/AddSurveyForm";
 
 const AddSurvey = () => {
   const { user } = useAuth();
