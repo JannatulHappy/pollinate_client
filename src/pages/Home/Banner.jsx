@@ -4,7 +4,7 @@ const Banner = () => {
   return (
     <div className="relative flex items-center h-screen bg-green-900 bg-center bg-cover">
       <div className="absolute inset-0 bg-black opacity-50"></div>
-      <div className="container relative z-10 mx-auto text-center text-white">
+      <div className="container relative mx-auto text-center text-white">
         <h1 className="pt-10 mb-4 text-4xl font-bold lg:text-6xl">
           Revolutionize Your Insights with Polls and Surveys
         </h1>

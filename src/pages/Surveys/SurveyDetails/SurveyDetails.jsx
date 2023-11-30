@@ -8,6 +8,7 @@ import Container from "../../../components/Shared/Container";
 import Loading from "../../../components/Shared/Loading";
 import ReactApexChart from "react-apexcharts";
 import moment from "moment";
+import toast from "react-hot-toast";
 
 const SurveyDetails = () => {
   const { user } = useAuth();
@@ -30,7 +31,7 @@ const SurveyDetails = () => {
     const response = data?.responses.map(
       (response) => response.responseUserEmail
     );
-    // console.log("response email paici", response);
+
     if (response?.includes(loggedUserData?.email)) {
       setIsInclude(true);
     }
@@ -53,12 +54,6 @@ const SurveyDetails = () => {
     }
 
     if (user) {
-      // const dislike = isLike === "no" ? data?.dislike + 1 : data.dislike;
-
-      // console.log("answers :", selectedOptions);
-      // console.log("TotalVote :", data.totalVote + 1);
-      // console.log("like:", like, "dislike:", dislike);
-
       const updatedData = {
         like: isLike === "yes" ? data?.like + 1 : data?.like,
         dislike: isLike === "no" ? data?.dislike + 1 : data.dislike,
@@ -91,12 +86,14 @@ const SurveyDetails = () => {
           },
         ],
       };
-      setSubmitVote("yes");
+
       console.log("updated", updatedData);
+      refetch();
       updateSurveys(updatedData, params.id);
-      
+      setSubmitVote("yes");
+
+      toast.success("Your Vote is Submitted");
     }
-    refetch();
   };
 
   if (isLoading || loadingOfLogged) {
@@ -131,13 +128,15 @@ const SurveyDetails = () => {
       name: "Dislike",
       data: [survey?.dislike],
     },
-   
+
     {
       name: "Total Votes",
       data: [survey?.totalVote],
     },
   ];
-{submitVote && refetch()}
+  {
+    submitVote && refetch();
+  }
   // console.log("paici", submitVote);
   // console.log("isinclude", isInclude);
   return (
@@ -251,7 +250,8 @@ const SurveyDetails = () => {
                 </div>
               )}
               {/* check if the role of the user is user || pro-user */}
-              {loggedUserData?.role === "user" ||
+              {!user ||
+              loggedUserData?.role === "user" ||
               loggedUserData?.role === "pro-user" ? (
                 <div className="my-6">
                   <button
