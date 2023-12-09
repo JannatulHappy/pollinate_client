@@ -3,9 +3,10 @@ import Container from "../../components/Shared/Container";
 import Heading from "../../components/Shared/Heading";
 import useSurveys from "../../hooks/useSurveys";
 import SurveyCard from "../../components/Shared/SurveyCard";
+import Loading from "../../components/Shared/Loading";
 
 const FeaturedSurveys = () => {
-  const { data } = useSurveys();
+  const { data, isLoading} = useSurveys();
 
   // Filter surveys with the status "publish" and then sort by total votes
   const sortedSurveys =
@@ -14,7 +15,9 @@ const FeaturedSurveys = () => {
       .sort((a, b) => b.totalVote - a.totalVote) || [];
 
   const top3Surveys = sortedSurveys.slice(0, 6);
-
+ if (isLoading ) {
+   return <Loading></Loading>;
+ }
   return (
     <div className="my-10">
       <Container>
@@ -28,7 +31,7 @@ const FeaturedSurveys = () => {
           {top3Surveys.map((survey, index) => (
             <div key={index}>
               {" "}
-              <SurveyCard survey={survey}></SurveyCard>
+              <SurveyCard survey={survey} showButton={true}></SurveyCard>
             </div>
           ))}
         </div>

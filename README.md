@@ -80,8 +80,14 @@ This project involves the development of an advanced Polling and Survey applicat
 - Comment on a survey.
 
 #### Package (implement )
+ 1.Tailwind
+ 2.Headless Ui
+ 3.React
+ 4.Express
+ 5.Tanstack Query
+ 6.Mongoose
 
-- ToDo:
+
 
 ## if you want to run it in you machine
 

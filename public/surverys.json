@@ -12,7 +12,7 @@
     "adminFeedback": "the status is unpublished. Just did it Emni",
     "totalVote": 15,
     "surveyCreatedBy": "user1.displayName",
-    "surveyCreatorEmail": "user1.email",
+    "surveyCreatorEmail": "jannatulferdoushappy21@gmail.com",
     "surveyCreatorImage": "user1.photoURL",
     "questions": [
       { "question1": "Do you own a smartwatch?" },
@@ -22,27 +22,66 @@
     "Feedback": [
       {
         "proUserName": "Happy",
-        "proUserEmail": "pro_user1@email.com",
-        "proUserImage": "https://img.freepik.com/free-photo/3d-illustration-pen-putting-blue-ticks-paper_107791-15675.jpg",
-
-        "comment": "Exciting survey! Can't wait to see the results."
-      },
-      {
-        "proUserName": "Happy",
-        "proUserEmail": "pro_user2@email.com",
-        "proUserImage": "https://img.freepik.com/free-photo/3d-illustration-pen-putting-blue-ticks-paper_107791-15675.jpg",
-        "comment": "Great questions! Very insightful."
-      },
-      {
-        "proUserName": "Happy",
-        "proUserEmail": "pro_user3@email.com",
+        "proUserEmail": "jannatulferdoushappy01@gmail.com",
         "proUserImage": "https://img.freepik.com/free-photo/3d-illustration-pen-putting-blue-ticks-paper_107791-15675.jpg",
         "comment": "I wish there were more questions about AI."
       }
     ],
     "responses": [
       {
-        "responseUserEmail": "userEmail1",
+        "responseUserEmail": "jannatulferdoushappy01@gmail.com",
+        "answers": {
+          "question1": "Yes",
+          "question2": "No",
+          "question3": "Yes"
+        }
+      }
+    ]
+  },
+  {
+    "category": "Technology",
+    "title": "Favorite Tech Gadgets Survey",
+    "description": "Share your preferences for the latest tech gadgets.",
+    "like": 25,
+    "dislike": 4,
+    "report": 2,
+    "image": "https://img.freepik.com/free-photo/3d-illustration-pen-putting-blue-ticks-paper_107791-15675.jpg",
+    "timestamp": "2023-11-30T12:45:00Z",
+    "surveyStatus": "unpublished",
+    "adminFeedback": "the status is unpublished. Just did it Emni",
+    "totalVote": 15,
+    "surveyCreatedBy": "user1.displayName",
+    "surveyCreatorEmail": "jannatulferdoushappy21@gmail.com",
+    "surveyCreatorImage": "user1.photoURL",
+    "questions": [
+      { "question1": "Do you own a smartwatch?" },
+      { "question2": "Do you prefer iOS or Android?" },
+      { "question3": "Have you tried virtual reality (VR) gaming?" }
+    ],
+    "Feedback": [
+      {
+        "proUserName": "Happy",
+        "proUserEmail": "jannatulferdoushappy01@gmail.com",
+        "proUserImage": "https://img.freepik.com/free-photo/3d-illustration-pen-putting-blue-ticks-paper_107791-15675.jpg",
+
+        "comment": "Exciting survey! Can't wait to see the results."
+      },
+      {
+        "proUserName": "Happy",
+        "proUserEmail": "jannatulferdoushappy01@gmail.com",
+        "proUserImage": "https://img.freepik.com/free-photo/3d-illustration-pen-putting-blue-ticks-paper_107791-15675.jpg",
+        "comment": "Great questions! Very insightful."
+      },
+      {
+        "proUserName": "Happy",
+        "proUserEmail": "jannatulferdoushappy21@gmail.com",
+        "proUserImage": "https://img.freepik.com/free-photo/3d-illustration-pen-putting-blue-ticks-paper_107791-15675.jpg",
+        "comment": "I wish there were more questions about AI."
+      }
+    ],
+    "responses": [
+      {
+        "responseUserEmail": "jannatulferdoushappy01@gmail.com",
         "answers": {
           "question1": "Yes",
           "question2": "No",
@@ -50,7 +89,7 @@
         }
       },
       {
-        "responseUserEmail": "userEmail2",
+        "responseUserEmail": "jannatulferdoushappy01@gmail.com",
         "answers": {
           "question1": "Yes",
           "question2": "No",
@@ -58,7 +97,7 @@
         }
       },
       {
-        "responseUserEmail": "userEmail3",
+        "responseUserEmail": "jannatulferdoushappy01@gmail.com",
         "answers": {
           "question1": "Yes",
           "question2": "No",
@@ -78,7 +117,7 @@
     "timestamp": "2023-11-30T11:30:00Z",
     "surveyStatus": "pending",
     "totalVote": 10,
-    "surveyCreatedBy": "user2.displayName",
+    "surveyCreatedBy": "jannatulferdoushappy21@gmail.com",
     "surveyCreatorEmail": "user2.email",
     "surveyCreatorImage": "user2.photoURL",
     "questions": [
@@ -89,13 +128,13 @@
     "Feedback": [
       {
         "proUserName": "Happy",
-        "proUserEmail": "pro_user_email1",
+        "proUserEmail": "jannatulferdoushappy01@gmail.com",
         "proUserImage": "https://img.freepik.com/free-photo/3d-illustration-pen-putting-blue-ticks-paper_107791-15675.jpg",
         "comment": "Great survey! Loved participating."
       },
       {
         "proUserName": "Happy",
-        "proUserEmail": "pro_user_email2",
+        "proUserEmail": "jannatulferdoushappy01@gmail.com",
         "proUserImage": "https://img.freepik.com/free-photo/3d-illustration-pen-putting-blue-ticks-paper_107791-15675.jpg",
         "comment": "Interesting questions. Can't wait to see the results!"
       },
@@ -145,7 +184,7 @@
     "surveyStatus": "published",
     "totalVote": 20,
     "surveyCreatedBy": "user3.displayName",
-    "surveyCreatorEmail": "user3.email",
+    "surveyCreatorEmail": "jannatulferdoushappy21@gmail.com",
     "surveyCreatorImage": "user3.photoURL",
     "questions": [
       { "question1": "Do you prefer beach or mountain vacations?" },
@@ -182,14 +221,16 @@
           "question2": "No",
           "question3": "Yes"
         }
-      }, {
+      },
+      {
         "responseUserEmail": "userEmail9",
         "answers": {
           "question1": "Yes",
           "question2": "No",
           "question3": "Yes"
         }
-      }, {
+      },
+      {
         "responseUserEmail": "userEmail9",
         "answers": {
           "question1": "Yes",
@@ -212,7 +253,7 @@
     "adminFeedback": "the status is unpublished",
     "totalVote": 12,
     "surveyCreatedBy": "user4.displayName",
-    "surveyCreatorEmail": "user4.email",
+    "surveyCreatorEmail": "jannatulferdoushappy21@gmail.com",
     "surveyCreatorImage": "user4.photoURL",
     "questions": [
       { "question1": "Do you enjoy regular workout sessions?" },

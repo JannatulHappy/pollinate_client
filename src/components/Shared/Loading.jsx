@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 
-import { RingLoader } from "react-spinners";
+import { BounceLoader} from "react-spinners";
 
 const Loading = () => {
   return (
@@ -11,7 +11,7 @@ const Loading = () => {
       justify-center 
       items-center "
     >
-      <RingLoader size={100} color="#36d7b7" />;
+      <BounceLoader color="#006400" />
     </div>
   );
 };

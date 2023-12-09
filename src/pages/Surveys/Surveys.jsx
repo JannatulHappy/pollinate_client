@@ -112,7 +112,7 @@ const Surveys = () => {
             {filteredSurveys.map((survey, index) => (
               <div key={index}>
                 {" "}
-                <SurveyCard survey={survey}></SurveyCard>
+                <SurveyCard survey={survey} showButton={true}></SurveyCard>
               </div>
             ))}
           </div>

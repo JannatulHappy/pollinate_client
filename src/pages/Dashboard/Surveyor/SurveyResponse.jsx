@@ -1,12 +1,26 @@
 import React from "react";
 import moment from "moment";
 import Chart from "react-apexcharts";
-import useSurveys from "../../../hooks/useSurveys";
+// import useSurveys from "../../../hooks/useSurveys";
 import Loading from "../../../components/Shared/Loading";
+import useAuth from "../../../hooks/useAuth";
+import { getSurveyorSurvey } from "../../../api/surveys";
+import { useQuery } from "@tanstack/react-query";
 
 const SurveyResponse = () => {
-  const { data: surveys, refetch, isLoading } = useSurveys();
+  // const { data: surveys, refetch, isLoading } = useSurveys();
+const { user } = useAuth();
 
+   const {
+     isLoading,
+     isError,
+     data: surveys,
+     error,
+     refetch,
+   } = useQuery({
+     queryKey: ["surveyorSurvey", user?.email],
+     queryFn: () => getSurveyorSurvey(user?.email),
+   });
   // Extract data for the chart
   const chartData = surveys?.map((survey) => ({
     x: survey.title,
@@ -74,7 +88,7 @@ const SurveyResponse = () => {
             { name: "Dislike", data: chartData?.map((data) => data.dislike) },
           ]}
           type="bar"
-          width="100%"
+          width="70%"
         />
       </div>
     </div>

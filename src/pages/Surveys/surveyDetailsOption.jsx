@@ -21,12 +21,23 @@ const SurveyDetails = () => {
   const [selectedOptions, setSelectedOptions] = useState({});
   const [comment, setComment] = useState(null);
   const [isLike, setIsLike] = useState("");
-  // const [isInclude, setIsInclude] = useState(false);
+  // const [report, setReport] = useState(false);
+  const [isInclude, setIsInclude] = useState(false);
+
   const { isLoading, isError, data, error, refetch } = useQuery({
     queryKey: ["singleSurvey", useParams.id],
     queryFn: () => getSingleSurvey(params.id),
   });
 
+  useEffect(() => {
+    const response = data?.responses.map(
+      (response) => response.responseUserEmail
+    );
+
+    if (response?.includes(loggedUserData?.email)) {
+      setIsInclude(true);
+    }
+  }, [data, loggedUserData]);
   const isDatePassed = (timestamp) => {
     const today = moment();
     const timestampDate = moment(timestamp);
@@ -35,18 +46,7 @@ const SurveyDetails = () => {
     return today.isAfter(timestampDate);
   };
   const timePassed = isDatePassed(data?.timestamp);
-  // useEffect(() => {
-  //   if (data?.responses) {
-  //     const includedEmail = data?.responses?.find(
-  //       (res) => res?.responseUserEmail === loggedUserData?.email
-  //     );
-  //     if (includedEmail) {
-  //       setIsInclude(true);
-  //     } else {
-  //       console.log("nooo");
-  //     }
-  //   }
-  // }, [data, loggedUserData?.email]);
+
   // Output: false (if today is before October 1, 2023)
   const handleVote = async (e) => {
     e.preventDefault();
@@ -62,32 +62,42 @@ const SurveyDetails = () => {
 
         totalVote: data?.totalVote + 1,
 
-        Feedback: {
-          proUserName: user?.displayName || loggedUserData?.name,
-          proUserEmail: user?.email,
-          proUserImage: user?.photoURL,
-          comment: comment,
-        },
+        Feedback: comment
+          ? [
+              ...data?.Feedback,
+              {
+                proUserName: user?.displayName || loggedUserData?.name,
+                proUserEmail: user?.email,
+                proUserImage: user?.photoURL,
+                comment: comment,
+              },
+            ]
+          : null,
 
-        responses: {
-          responseUserEmail: user.email,
-          answers: {
-            question1: selectedOptions.question1,
-            question2: selectedOptions.question2,
-            question3: selectedOptions.question3,
+        responses: [
+          ...data?.responses,
+          {
+            responseUserEmail: user.email,
+            answers: [
+              {
+                question1: selectedOptions.question1,
+                question2: selectedOptions.question2,
+                question3: selectedOptions.question3,
+              },
+            ],
           },
-        },
+        ],
       };
-      setSubmitVote("yes");
 
+      console.log("updated", updatedData);
+      refetch();
       updateSurveys(updatedData, params.id);
+      setSubmitVote("yes");
 
       toast.success("Your Vote is Submitted");
     }
   };
-  if (submitVote === "yes") {
-    refetch();
-  }
+
   if (isLoading || loadingOfLogged) {
     return <Loading></Loading>;
   }
@@ -126,7 +136,9 @@ const SurveyDetails = () => {
       data: [survey?.totalVote],
     },
   ];
-
+  {
+    submitVote && refetch();
+  }
   // console.log("paici", submitVote);
   // console.log("isinclude", isInclude);
   return (
@@ -149,7 +161,7 @@ const SurveyDetails = () => {
               <p className="text-gray-400">Surveyor</p>
             </div>
           </div>
-          {loggedUserData?.email}
+
           {/* Survey Image (if applicable) */}
           <img className="object-cover w-full h-64" src={survey?.image} />
           {/* Survey Details */}
@@ -195,13 +207,13 @@ const SurveyDetails = () => {
         </div>
 
         {/* Render chart if isInclude is true */}
-        {submitVote === "yes" ? (
+        {isInclude ? (
           <div className="w-1/2">
-            {/* {timePassed && (
+            {timePassed && (
               <p className="py-10 text-base font-medium text-red-500">
                 The Deadline is expires of this Survey!!!
               </p>
-            )} */}
+            )}
             <h2 className="mb-4 text-xl font-bold">Survey Results Chart:</h2>
             <ReactApexChart
               options={chartOptions}

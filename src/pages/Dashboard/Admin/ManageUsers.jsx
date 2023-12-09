@@ -3,12 +3,13 @@ import { useQuery } from "@tanstack/react-query";
 
 import { getAllUsers } from "../../../api/auth";
 import UserDataRow from "../../../components/Dashboard/TableRows/UserDataRow";
+import Loading from "../../../components/Shared/Loading";
 
 const ManageUsers = () => {
   const [roleFilter, setRoleFilter] = useState("all");
 
   // Fetch all users
-  const { data: users = [], refetch } = useQuery({
+  const { data: users = [], refetch ,isLoading} = useQuery({
     queryKey: ["users"],
     queryFn: async () => {
       const res = await getAllUsers();
@@ -27,7 +28,9 @@ const ManageUsers = () => {
       return user.role === roleFilter;
     }
   });
-
+  if (isLoading) {
+  return <Loading></Loading>
+}
   return (
     <>
       <div className="container px-4 mx-auto sm:px-8">

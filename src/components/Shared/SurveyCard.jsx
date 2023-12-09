@@ -1,6 +1,9 @@
 import moment from "moment";
 import { Link } from "react-router-dom";
-const SurveyCard = ({ survey }) => {
+import { FaVoteYea } from "react-icons/fa";
+import { AiFillDislike, AiFillLike } from "react-icons/ai";
+
+const SurveyCard = ({ survey, showButton }) => {
   // Assuming the timestamp is a string in ISO 8601 format
   const formatDate = (timestamp) => {
     return moment(timestamp).format("MMMM Do YYYY");
@@ -9,53 +12,58 @@ const SurveyCard = ({ survey }) => {
     <div className="m-2 overflow-hidden bg-white rounded shadow-lg ">
       {/* Survey Image (if applicable) */}
       <img className="object-cover w-full h-64" src={survey.image} />
-
+      {/* Survey Details */}
+      <div className="flex items-center justify-between px-6 pt-3">
+        {/* Like and Dislike Count */}
+        <div className="flex items-center gap-6">
+          <div className="flex items-center justify-center gap-1">
+            <span className="pt-1 text-lg font-medium text-gray-500">
+              {survey.like}
+            </span>{" "}
+            <AiFillLike className="text-2xl text-green-700" />
+          </div>
+          <div className="flex items-center justify-center gap-1">
+            {" "}
+            <span className="text-xl font-medium text-gray-500 ">
+              {survey.dislike}
+            </span>{" "}
+            <AiFillDislike className="pt-1 text-[28px] text-yellow-700" />
+          </div>
+        </div>
+        {/* Total Votes */}
+        <div className="flex items-center justify-center gap-1">
+          {" "}
+          <span className="pt-1 text-lg font-medium text-gray-500">
+            {" "}
+            {survey.totalVote}
+          </span>{" "}
+          <FaVoteYea className="pt-2 text-[28px] text-gray-800" />
+        </div>
+      </div>
       <div className="px-6 py-4">
         {/* Survey Title */}
 
-        <div className="mb-2 text-xl font-bold">{survey.title}</div>
-
-        <div className="h-12">
-          {/* Survey Description */}
-          <p className="text-base text-gray-700">{survey.description}</p>
+        <div className="mb-2 text-xl font-bold text-green-900">
+          {survey.title}
         </div>
 
-        {/* Survey Details */}
-        <div className="flex items-center justify-between mt-4">
-          {/* Like and Dislike Count */}
-          <div className="flex items-center">
-            <span className="mr-2">
-              <i className="text-green-500 far fa-thumbs-up"></i> Like:
-              {survey.like}
-            </span>
-            <span className="mr-2">
-              <i className="text-red-500 far fa-thumbs-down"></i> Dislike:{" "}
-              {survey.dislike}
-            </span>
-          </div>
-
-          {/* Total Votes */}
-          <div>
-            <i className="text-blue-500 far fa-check-circle"></i>{" "}
-            {survey.totalVote} votes
-          </div>
-
-          {/* Survey Status */}
-          <div>Status: {survey.surveyStatus}</div>
+        <div className="h-8">
+          {/* Survey Description */}
+          <p className="text-base text-green-900">{survey.description}</p>
         </div>
       </div>
       {/* Survey Creator Information */}
-      <div className="flex items-center justify-between px-6 py-4 border-t border-gray-200">
-        <span className="mr-2">
-          <i className="text-red-500 far fa-thumbs-down"></i> Created:{" "}
-          {formatDate(survey.timestamp)}
-        </span>
-        <Link to={`/surveys/${survey._id}`}>
-          <button className="px-4 py-3 text-lg font-medium bg-green-100 rounded-lg hover:bg-green-200">
-            Participate In Survey
-          </button>
-        </Link>
-      </div>
+      {showButton ? (
+        <div className="flex items-center justify-center px-6 py-4 ">
+          <Link to={`/surveys/${survey._id}`}>
+            <button className="px-4 py-3 text-lg font-medium text-white bg-green-900 rounded-lg hover:bg-black">
+              PARTICIPATE IN SURVEY
+            </button>
+          </Link>
+        </div>
+      ) : (
+        ""
+      )}
     </div>
   );
 };

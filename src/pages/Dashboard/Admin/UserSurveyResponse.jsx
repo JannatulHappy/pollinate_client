@@ -68,7 +68,7 @@ in admin
             { name: "Dislike", data: chartData?.map((data) => data.dislike) },
           ]}
           type="bar"
-          width="100%"
+          width="80%"
         />
       </div>
     </div>

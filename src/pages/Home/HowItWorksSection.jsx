@@ -9,8 +9,8 @@ const HowItWorksSection = () => {
         <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
           {/* Step 1 */}
           <div className="p-8 bg-white rounded-md shadow-md">
-            <h3 className="mb-4 text-2xl font-bold text-blue-600">Step 1</h3>
-            <p className="text-gray-700">
+            <h3 className="mb-4 text-2xl font-bold text-green-900">Step 1</h3>
+            <p className="text-gray-600">
               Explore our diverse range of featured surveys or create your own
               survey effortlessly.
             </p>
@@ -18,8 +18,8 @@ const HowItWorksSection = () => {
 
           {/* Step 2 */}
           <div className="p-8 bg-white rounded-md shadow-md">
-            <h3 className="mb-4 text-2xl font-bold text-green-600">Step 2</h3>
-            <p className="text-gray-700">
+            <h3 className="mb-4 text-2xl font-bold text-green-700">Step 2</h3>
+            <p className="text-gray-600">
               Participate in surveys, express your opinions, and engage with a
               vibrant community of like-minded individuals.
             </p>
@@ -27,8 +27,8 @@ const HowItWorksSection = () => {
 
           {/* Step 3 */}
           <div className="p-8 bg-white rounded-md shadow-md">
-            <h3 className="mb-4 text-2xl font-bold text-purple-600">Step 3</h3>
-            <p className="text-gray-700">
+            <h3 className="mb-4 text-2xl font-bold text-green-600">Step 3</h3>
+            <p className="text-gray-600">
               View detailed survey results, discover what others think, and stay
               informed on the latest trends and opinions.
             </p>

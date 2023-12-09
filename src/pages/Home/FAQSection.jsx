@@ -57,12 +57,12 @@ const FAQSection = () => {
             <Disclosure key={index}>
               {({ open }) => (
                 <>
-                  <Disclosure.Button className="flex justify-between w-full px-4 py-2 text-lg font-medium text-left bg-green-100 rounded-lg text-900 hover:bg-gray-400 focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75">
+                  <Disclosure.Button className="flex justify-between w-full px-4 py-2 text-lg font-medium text-left bg-green-100 rounded-lg text-900 hover:bg-gray-300 focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75">
                     <span>{faq.question}</span>
                     <BiSolidToTop
                       className={`${
                         open ? "rotate-180 transform" : ""
-                      } h-5 w-5 text-gray-500`}
+                      } h-5 w-5 text-gray-400`}
                     />
                   </Disclosure.Button>
                   <Disclosure.Panel className="px-4 pt-4 pb-2 text-lg text-gray-500">

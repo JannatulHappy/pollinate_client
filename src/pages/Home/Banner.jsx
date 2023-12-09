@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Banner = () => {
   return (
-    <div className="relative flex items-center h-screen bg-green-900 bg-center bg-cover">
+    <div className="relative flex items-center bg-green-900 bg-center bg-cover h-[80vh]">
       <div className="absolute inset-0 bg-black opacity-50"></div>
       <div className="container relative mx-auto text-center text-white">
         <h1 className="pt-10 mb-4 text-4xl font-bold lg:text-6xl">
@@ -16,7 +16,7 @@ const Banner = () => {
         </p>
         <Link
           to="/surveys"
-          className="px-8 py-3 text-lg font-bold text-black transition duration-300 transform bg-white rounded-lg hover:bg-black hover:text-white hover:scale-105"
+          className="px-8 py-3 text-lg font-bold text-black bg-white rounded-lg hover:py-5 hover:bg-black hover:text-white"
         >
           Explore Now
         </Link>

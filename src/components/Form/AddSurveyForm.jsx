@@ -116,7 +116,7 @@ const AddSurveyForm = ({
                   <input
                     className="w-full px-4 py-3 text-gray-800 border border-green-300 rounded-md focus:outline-green-500 "
                     name="question2"
-                    id="bathrooms"
+                    id="question2"
                     type="text"
                     placeholder="Add Question 3"
                     required
@@ -131,7 +131,7 @@ const AddSurveyForm = ({
                   <input
                     className="w-full px-4 py-3 text-gray-800 border border-green-300 rounded-md focus:outline-green-500 "
                     name="question3"
-                    id="question1"
+                    id="question3"
                     type="text"
                     placeholder="Add Question 3"
                     required
@@ -146,7 +146,8 @@ const AddSurveyForm = ({
               </label>
 
               <textarea
-                id="description"required
+                id="description"
+                required
                 className="block w-full h-32 px-4 py-3 text-gray-800 border border-green-300 rounded-md focus:green-300 focus:outline-green-500 "
                 name="description"
               ></textarea>
