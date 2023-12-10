@@ -98,11 +98,6 @@ STRIPE_SECRET_KEY=YOUR_STRIPE_SECRET_KEY
 5. Start the backend server by running `npm run dev:backend`.
 6. Start the frontend server by running `npm run dev:frontend`.
 
-## Testing
-
-The application can be tested by running the following command:
-
-npm run test
 
 ## Deployment
 

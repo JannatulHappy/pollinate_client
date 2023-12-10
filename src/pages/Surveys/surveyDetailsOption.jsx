@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { useNavigate, useParams } from "react-router-dom";
+import { Navigate, useLocation, useParams } from "react-router-dom";
 import { getSingleSurvey, updateSurveys } from "../../../api/surveys";
 import { FaVoteYea } from "react-icons/fa";
 import { AiFillDislike, AiFillLike } from "react-icons/ai";
@@ -14,9 +14,9 @@ import toast from "react-hot-toast";
 
 const SurveyDetails = () => {
   const { user } = useAuth();
-  const navigate = useNavigate();
   const { loggedUserData, loadingOfLogged } = useRole();
   const params = useParams();
+  const location = useLocation();
   const [submitVote, setSubmitVote] = useState("no");
   const [selectedOptions, setSelectedOptions] = useState({});
   const [comment, setComment] = useState(null);
@@ -52,7 +52,7 @@ const SurveyDetails = () => {
     e.preventDefault();
 
     if (!user) {
-      navigate("/login");
+      return <Navigate to="/login" state={{ from: location }} replace="true" />;
     }
 
     if (user) {
